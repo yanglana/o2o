@@ -18,5 +18,10 @@
     <!--默认匹配所有请求-->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>aaa.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>
 
