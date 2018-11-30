@@ -49,7 +49,7 @@ CREATE TABLE tb_local_auth(
     CONSTRAINT fk_localauth_profile FOREIGN KEY(user_id) REFERENCES tb_person_info(user_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-//wechat表中openID是唯一的，给wechat表中的openID增加唯一索引以提高查找wechat表中数据的效率
+//wechat表中openID是唯一的,给wechat表中的openID增加唯一索引以提高查找wechat表中数据的效率
 ALTER TABLE tb_wechat_auth ADD UNIQUE INDEX(open_id);	
 
 //头条表
@@ -128,7 +128,7 @@ CREATE TABLE tb_product(
     shop_id INT(20) NOT NULL DEFAULT 0,
     PRIMARY KEY(product_id),
     CONSTRAINT fk_product_procate FOREIGN KEY(product_category_id) REFERENCES tb_product_category(product_category_id),
-    CONSTRAINT fk_product_shop FOREIGN KEY(shop_id) REFERENCES tb_product_category(shop_id)
+    CONSTRAINT fk_product_shop FOREIGN KEY(shop_id) REFERENCES tb_shop(shop_id)
 )ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 //商品详情图表

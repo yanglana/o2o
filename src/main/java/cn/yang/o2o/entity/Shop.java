@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class Shop {
     //主键ID
-    private String shopId;
+    private long shopId;
     //名称
     private String shopName;
     //简介
@@ -37,11 +37,11 @@ public class Shop {
     //店铺类别
     private ShopCategory shopCategory;
 
-    public String getShopId() {
+    public long getShopId() {
         return shopId;
     }
 
-    public void setShopId(String shopId) {
+    public void setShopId(long shopId) {
         this.shopId = shopId;
     }
 

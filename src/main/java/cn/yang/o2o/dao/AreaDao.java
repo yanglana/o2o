@@ -6,11 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @Description TODO
- * @Author yanglan
- * @Date 2018/11/26 10:29
- */
 public interface AreaDao {
     /*
      * @Description 列出区域列表
