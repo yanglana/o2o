@@ -1,61 +1,6 @@
-2018-11-30 10:26:43.644 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr,phone,shop_img, priority,create_time,last_edit_time,enable_status,advice) values(?,?,?,?, ?,?,?,?,?,?, ?,?,?) 
-2018-11-30 10:26:43.714 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), test1(String), null, null, 2018-11-30 10:26:43.376(Timestamp), 2018-11-30 10:26:43.376(Timestamp), 0(Integer), 审核中(String)
-2018-11-30 10:26:43.924 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2018-11-30 10:26:43.942 [main] DEBUG cn.yang.o2o.service.ShopService - effectedNum:1
-2018-11-30 10:26:43.943 [main] DEBUG cn.yang.o2o.service.ShopService - shopImg:E:\image\xiaohuangren.jpg
-2018-11-30 10:26:43.943 [main] DEBUG cn.yang.o2o.service.ShopService - shopImg2:E:\image\xiaohuangren.jpg
-2018-11-30 10:26:43.943 [main] DEBUG cn.yang.o2o.service.ShopService - addShopImg2
-2018-11-30 10:26:43.943 [main] DEBUG cn.yang.o2o.service.ShopService - shopId:29
-2018-11-30 10:26:43.944 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:uploade/images/item/shop/29/
-2018-11-30 10:28:01.212 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr,phone,shop_img, priority,create_time,last_edit_time,enable_status,advice) values(?,?,?,?, ?,?,?,?,?,?, ?,?,?) 
-2018-11-30 10:28:01.261 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), test1(String), null, null, 2018-11-30 10:28:00.91(Timestamp), 2018-11-30 10:28:00.91(Timestamp), 0(Integer), 审核中(String)
-2018-11-30 10:28:01.434 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2018-11-30 10:28:01.463 [main] DEBUG cn.yang.o2o.service.ShopService - effectedNum:1
-2018-11-30 10:28:01.463 [main] DEBUG cn.yang.o2o.service.ShopService - shopImg:E:\image\xiaohuangren.jpg
-2018-11-30 10:28:01.463 [main] DEBUG cn.yang.o2o.service.ShopService - shopImg2:E:\image\xiaohuangren.jpg
-2018-11-30 10:28:01.463 [main] DEBUG cn.yang.o2o.service.ShopService - addShopImg2
-2018-11-30 10:28:01.463 [main] DEBUG cn.yang.o2o.service.ShopService - shopId:30
-2018-11-30 10:28:01.464 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:uploade/images/item/shop/30/
-2018-11-30 10:53:00.843 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/0/
-2018-11-30 10:57:24.959 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/0/
-2018-11-30 10:58:57.684 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/0/
-2018-11-30 10:59:09.445 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/0/
-2018-11-30 10:59:28.205 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/0/
-2018-11-30 11:03:33.474 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/0/
-2018-11-30 11:06:58.677 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/0/
-2018-11-30 11:11:19.193 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/0/
-2018-11-30 11:11:19.199 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is:upload\images\item\shop\0\2018113011111959318.jpg
-2018-11-30 11:11:19.199 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is:E:\image\upload\images\item\shop\0\2018113011111959318.jpg
-2018-11-30 11:11:19.200 [main] DEBUG cn.yang.o2o.util.ImageUtil - basePath is:/E:/IdeaProjects/o2omaven/target/classes/
-2018-11-30 11:12:36.998 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr,phone,shop_img, priority,create_time,last_edit_time,enable_status,advice) values(?,?,?,?, ?,?,?,?,?,?, ?,?,?) 
-2018-11-30 11:12:37.040 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), test1(String), null, null, 2018-11-30 11:12:36.725(Timestamp), 2018-11-30 11:12:36.725(Timestamp), 0(Integer), 审核中(String)
-2018-11-30 11:12:37.200 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2018-11-30 11:12:37.228 [main] DEBUG cn.yang.o2o.service.ShopService - effectedNum:1
-2018-11-30 11:12:37.228 [main] DEBUG cn.yang.o2o.service.ShopService - shopImg:E:\image\xiaohuangren.jpg
-2018-11-30 11:12:37.228 [main] DEBUG cn.yang.o2o.service.ShopService - shopImg2:E:\image\xiaohuangren.jpg
-2018-11-30 11:12:37.229 [main] DEBUG cn.yang.o2o.service.ShopService - addShopImg2
-2018-11-30 11:12:37.229 [main] DEBUG cn.yang.o2o.service.ShopService - shopId:31
-2018-11-30 11:12:37.230 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/31/
-2018-11-30 11:12:37.230 [main] DEBUG cn.yang.o2o.service.ShopService - dest2:upload\images\item\shop\31\
-2018-11-30 11:12:37.234 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is:upload\images\item\shop\31\2018113011123738636.jpg
-2018-11-30 11:12:37.234 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is:E:\image\upload\images\item\shop\31\2018113011123738636.jpg
-2018-11-30 11:12:37.235 [main] DEBUG cn.yang.o2o.util.ImageUtil - basePath is:/E:/IdeaProjects/o2omaven/target/test-classes/
-2018-11-30 11:19:00.423 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id, shop_name,shop_desc,shop_addr,phone,shop_img, priority,create_time,last_edit_time,enable_status,advice) values(?,?,?,?, ?,?,?,?,?,?, ?,?,?) 
-2018-11-30 11:19:00.467 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), test1(String), null, null, 2018-11-30 11:19:00.158(Timestamp), 2018-11-30 11:19:00.158(Timestamp), 0(Integer), 审核中(String)
-2018-11-30 11:19:00.607 [main] DEBUG cn.yang.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2018-11-30 11:19:00.634 [main] DEBUG cn.yang.o2o.service.ShopService - effectedNum:1
-2018-11-30 11:19:00.634 [main] DEBUG cn.yang.o2o.service.ShopService - shopImg:E:\image\xiaohuangren.jpg
-2018-11-30 11:19:00.634 [main] DEBUG cn.yang.o2o.service.ShopService - shopImg2:E:\image\xiaohuangren.jpg
-2018-11-30 11:19:00.634 [main] DEBUG cn.yang.o2o.service.ShopService - addShopImg2
-2018-11-30 11:19:00.634 [main] DEBUG cn.yang.o2o.service.ShopService - shopId:32
-2018-11-30 11:19:00.635 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/32/
-2018-11-30 11:19:00.635 [main] DEBUG cn.yang.o2o.service.ShopService - dest2:upload\images\item\shop\32\
-2018-11-30 11:19:00.640 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is:upload\images\item\shop\32\2018113011190039128.jpg
-2018-11-30 11:19:00.640 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is:E:\image\upload\images\item\shop\32\2018113011190039128.jpg
-2018-11-30 11:19:00.640 [main] DEBUG cn.yang.o2o.util.ImageUtil - basePath is:/E:/IdeaProjects/o2omaven/target/test-classes/
-2018-11-30 11:19:00.746 [main] DEBUG cn.yang.o2o.service.ShopService - shopImgAddr:upload\images\item\shop\32\2018113011190039128.jpg
-2018-11-30 11:19:00.747 [main] DEBUG cn.yang.o2o.service.ShopService - addShopImg
-2018-11-30 11:19:00.787 [main] DEBUG cn.yang.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2018-11-30 11:19:00.788 [main] DEBUG cn.yang.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺1(String), test1(String), test1(String), test1(String), upload\images\item\shop\32\2018113011190039128.jpg(String), 2018-11-30 11:19:00.158(Timestamp), 0(Integer), 审核中(String), 2(Integer), 1(Long), 32(Long)
-2018-11-30 11:19:00.910 [main] DEBUG cn.yang.o2o.dao.ShopDao.updateShop - <==    Updates: 1
-2018-11-30 11:19:00.911 [main] DEBUG cn.yang.o2o.service.ShopService - effectedNum2:1
+2018-12-06 19:25:08.612 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2018-12-06 19:25:08.654 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-12-06 19:25:08.744 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2018-12-06 19:25:08.744 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id from tb_shop_category WHERE parent_id is not null and parent_id = ? order by priority desc 
+2018-12-06 19:25:08.754 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 1(Long)
+2018-12-06 19:25:08.754 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1

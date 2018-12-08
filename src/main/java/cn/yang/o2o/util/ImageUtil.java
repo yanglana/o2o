@@ -17,6 +17,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -55,11 +56,11 @@ public class ImageUtil {
      * @Param [thumbnail, targetAddr:图片存储路径]
      * @Return java.lang.String
      */
-    public static String generateThumbnail(File thumbnail, String targetAddr) {
+    public static String generateThumbnail(InputStream thumbnailInputStream, String fileName, String targetAddr) {
         //获取不重复的随机名
         String realFileName = getRandomFileName();
         //获取扩展名  随机名+扩展名=新名字
-        String extension = getFileExtension(thumbnail);
+        String extension = getFileExtension(fileName);
         //如果目标路径不存在，则自动创建
         makeDirPath(targetAddr);
         //获取文件存储的相对路径(带文件名)
@@ -71,7 +72,7 @@ public class ImageUtil {
         logger.debug("basePath is:" + basePath);
         // 调用Thumbnails生成带有水印的图片
         try {
-            Thumbnails.of(thumbnail).size(200, 200)
+            Thumbnails.of(thumbnailInputStream).size(200, 200)
                     .watermark(Positions.BOTTOM_RIGHT,
                             ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
                     .outputQuality(0.8f).toFile(dest);
@@ -102,9 +103,8 @@ public class ImageUtil {
      * @Param [thumbnail]
      * @Return java.lang.String
      */
-    private static String getFileExtension(File cFile) {
-        String originalFileName = cFile.getName();
-        return originalFileName.substring(originalFileName.lastIndexOf("."));
+    private static String getFileExtension(String fileName) {
+        return fileName.substring(fileName.lastIndexOf("."));
     }
 
     /*
