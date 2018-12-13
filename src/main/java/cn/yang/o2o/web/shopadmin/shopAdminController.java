@@ -10,12 +10,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @Date 2018/12/5 15:26
  */
 @Controller
-@RequestMapping(value = "shopadmin",method={RequestMethod.GET})
+@RequestMapping(value = "shopadmin", method = {RequestMethod.GET})
 public class shopAdminController {
 
     @RequestMapping("/shopoperation")
-    public String shopoperation(){
+    public String shopoperation() {
         return "shop/shopoperation";//在spring-web.xml文件中设定了前后缀
     }
 
+    @RequestMapping("/shoplist")
+    public String shoplist() {
+        return "shop/shoplist";
+    }
+
+    @RequestMapping("/shopmanagement")
+    public String shopmanagement() {
+        return "shop/shopmanagement";
+    }
 }

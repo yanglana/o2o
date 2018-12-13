@@ -8,8 +8,10 @@ import cn.yang.o2o.entity.ShopCategory;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -23,6 +25,38 @@ public class ShopDaoTest extends BaseTest {
     private ShopDao shopDao;
 
     @Test
+    public void testQueryShopListAndCount(){
+        Shop shopCondition = new Shop();
+        PersonInfo owner = new PersonInfo();
+        Area area = new Area();
+        ShopCategory shopCategory = new ShopCategory();
+        shopCategory.setShopCategoryId(2L);
+        //area.setAreaId(2);
+        //wner.setUserId(2L);
+        //shopCondition.setShopName("3");
+        //shopCondition.setEnableStatus(0);
+        shopCondition.setOwner(owner);
+        shopCondition.setArea(area);
+        shopCondition.setShopCategory(shopCategory);
+        List<Shop> shopList = shopDao.queryShopList(shopCondition,0,10);
+        System.out.println("店铺列表大小:"+shopList.size());
+        shopCategory = new ShopCategory();
+        shopCondition.setShopCategory(shopCategory);
+        int count = shopDao.queryShopCount(shopCondition);
+        System.out.println("店铺总数："+count);
+    }
+
+    @Test
+    @Ignore
+    public void testQueryByShopId(){
+        long shopId=1;
+        Shop shop = shopDao.queryByShopId(shopId);
+        System.out.println("areaId:"+shop.getArea().getAreaId());
+        System.out.println("areaName"+shop.getArea().getAreaName());
+    }
+
+    @Test
+    @Ignore
     public void testInsertShop(){
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();
@@ -47,6 +81,7 @@ public class ShopDaoTest extends BaseTest {
     }
 
     @Test
+    @Ignore
     public void testUpdateShop(){
         Shop shop = new Shop();
         shop.setShopId(1L);

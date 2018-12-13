@@ -7,6 +7,8 @@ import cn.yang.o2o.entity.PersonInfo;
 import cn.yang.o2o.entity.Shop;
 import cn.yang.o2o.entity.ShopCategory;
 import cn.yang.o2o.enums.ShopStateEnum;
+import cn.yang.o2o.exceptions.ShopOperationException;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -28,6 +30,30 @@ public class ShopServiceTest extends BaseTest {
     private ShopService shopService;
 
     @Test
+    public void testGetShopList() {
+        Shop shopCondition = new Shop();
+        ShopCategory shopCategory = new ShopCategory();
+        shopCategory.setShopCategoryId(4L);
+        shopCondition.setShopCategory(shopCategory);
+        ShopExecution se = shopService.getShopList(shopCondition, 2, 2);
+        System.out.println("店铺列表数为：" + se.getShopList().size());
+        System.out.println("店铺总数为：" + se.getCount());
+    }
+
+    @Test
+    @Ignore
+    public void testModifyShop() throws ShopOperationException, FileNotFoundException {
+        Shop shop = new Shop();
+        shop.setShopId(1L);
+        shop.setShopName("修改后的店铺名称");
+        File shopImg = new File("E:/image/dabai.jpg");
+        InputStream is = new FileInputStream(shopImg);
+        ShopExecution shopExecution = shopService.modifyShop(shop, is, shopImg.getName());
+        System.out.println("新的图片地址为：" + shopExecution.getShop().getShopImg());
+    }
+
+    @Test
+    @Ignore
     public void testAddShop() throws FileNotFoundException {
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();
@@ -47,8 +73,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setEnableStatus(ShopStateEnum.CHECK.getState());
         shop.setAdvice("审核中");
         File shopImage = new File("E:/image/xiaohuangren.jpg");
-        InputStream is=new FileInputStream(shopImage);
-        ShopExecution se = shopService.addShop(shop, is,shopImage.getName());
+        InputStream is = new FileInputStream(shopImage);
+        ShopExecution se = shopService.addShop(shop, is, shopImage.getName());
         assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
     }
 
