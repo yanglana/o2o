@@ -13,7 +13,7 @@ public class ProductCategory {
     //类别名
     private String productCategoryName;
     //该类别是属于哪个店铺
-    private Long shop;
+    private Long shopId;
     //权重
     private Integer priority;
     //创建时间
@@ -35,12 +35,12 @@ public class ProductCategory {
         this.productCategoryName = productCategoryName;
     }
 
-    public Long getShop() {
-        return shop;
+    public Long getShopId() {
+        return shopId;
     }
 
-    public void setShop(Long shop) {
-        this.shop = shop;
+    public void setShopId(Long shopId) {
+        this.shopId = shopId;
     }
 
     public Integer getPriority() {
