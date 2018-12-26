@@ -1,6 +1,7 @@
 package cn.yang.o2o.service;
 
 import cn.yang.o2o.BaseTest;
+import cn.yang.o2o.dto.ImageHolder;
 import cn.yang.o2o.dto.ShopExecution;
 import cn.yang.o2o.entity.Area;
 import cn.yang.o2o.entity.PersonInfo;
@@ -48,7 +49,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setShopName("修改后的店铺名称");
         File shopImg = new File("E:/image/dabai.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.modifyShop(shop, is, shopImg.getName());
+        ImageHolder thumbnail = new ImageHolder(shopImg.getName(),is);
+        ShopExecution shopExecution = shopService.modifyShop(shop,thumbnail);
         System.out.println("新的图片地址为：" + shopExecution.getShop().getShopImg());
     }
 
@@ -74,7 +76,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setAdvice("审核中");
         File shopImage = new File("E:/image/xiaohuangren.jpg");
         InputStream is = new FileInputStream(shopImage);
-        ShopExecution se = shopService.addShop(shop, is, shopImage.getName());
+        ImageHolder thumbnail = new ImageHolder(shopImage.getName(),is);
+        ShopExecution se = shopService.addShop(shop, thumbnail);
         assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
     }
 

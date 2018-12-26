@@ -1,5 +1,6 @@
 package cn.yang.o2o.web.shopadmin;
 
+import cn.yang.o2o.dto.ImageHolder;
 import cn.yang.o2o.dto.ShopExecution;
 import cn.yang.o2o.entity.Area;
 import cn.yang.o2o.entity.PersonInfo;
@@ -15,8 +16,6 @@ import cn.yang.o2o.util.HttpServletRequestUtil;
 import cn.yang.o2o.util.ImageUtil;
 import cn.yang.o2o.util.PathUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.code.kaptcha.Constants;
-import org.omg.CORBA.ObjectHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +25,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
-import javax.jws.Oneway;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
@@ -180,9 +178,10 @@ public class ShopManagementController {
             ShopExecution se;
             try {
                 if (shopImg == null) {
-                    se = shopService.modifyShop(shop, null, null);
+                    se = shopService.modifyShop(shop, null);
                 } else {
-                    se = shopService.modifyShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                    ImageHolder thumbnail = new ImageHolder(shopImg.getOriginalFilename(), shopImg.getInputStream());
+                    se = shopService.modifyShop(shop, thumbnail);
                 }
                 if (se.getState() == ShopStateEnum.SUCCESS.getState()) {
                     modelMap.put("success", true);
@@ -257,7 +256,8 @@ public class ShopManagementController {
             }*/
             ShopExecution se;
             try {
-                se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                ImageHolder thumbnail = new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream());
+                se = shopService.addShop(shop,thumbnail);
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
                     //该用户可以操作的店铺列表

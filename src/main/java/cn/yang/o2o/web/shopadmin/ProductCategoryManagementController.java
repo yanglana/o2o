@@ -35,9 +35,9 @@ public class ProductCategoryManagementController {
     //只返回一个对象所以可以自定义返回集
     public Result<List<ProductCategory>> getProductCategoryList(HttpServletRequest request) {
         // TO be removed
-        Shop shop = new Shop();
+        /*Shop shop = new Shop();
         shop.setShopId(1L);
-        request.getSession().setAttribute("currentShop", shop);
+        request.getSession().setAttribute("currentShop", shop);*/
 
         Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
         List<ProductCategory> list = null;

@@ -3,7 +3,9 @@ package cn.yang.o2o.dao;
 import cn.yang.o2o.BaseTest;
 import cn.yang.o2o.entity.Product;
 import cn.yang.o2o.entity.ProductCategory;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -17,19 +19,20 @@ import static org.junit.Assert.assertEquals;
  * @Author yanglan
  * @Date 2018/12/20 9:36
  */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProductCategoryDaoTest extends BaseTest {
     @Autowired
     private ProductCategoryDao productCategoryDao;
 
     @Test
-    public void testQueryByShopId(){
+    public void testBQueryByShopId(){
         long shopId = 1;
         List<ProductCategory> productCategoryList = productCategoryDao.queryProductCategoryList(shopId);
         System.out.println("该店铺自定义类别数为:"+productCategoryList.size());
     }
 
     @Test
-    public void testBatchInsertProductCategory(){
+    public void testABatchInsertProductCategory(){
         ProductCategory productCategory = new ProductCategory();
         productCategory.setProductCategoryName("商品类别1");
         productCategory.setPriority(1);
@@ -48,7 +51,7 @@ public class ProductCategoryDaoTest extends BaseTest {
     }
 
     @Test
-    public void testDeleteProductCategory(){
+    public void testCDeleteProductCategory(){
         long shopId = 1L;
         List<ProductCategory> productCategoryList = productCategoryDao.queryProductCategoryList(shopId);
         for (ProductCategory pc : productCategoryList) {

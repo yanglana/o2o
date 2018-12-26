@@ -1,29 +1,92 @@
-2018-12-20 10:00:35.115 [main] DEBUG c.y.o.d.P.queryProductCategoryList - ==>  Preparing: select product_category_id, product_category_name, shop_id, priority, create_time from tb_product_category where shop_id = ? order by priority desc 
-2018-12-20 10:00:35.253 [main] DEBUG c.y.o.d.P.queryProductCategoryList - ==> Parameters: 1(Long)
-2018-12-20 10:00:35.307 [main] DEBUG c.y.o.d.P.queryProductCategoryList - <==      Total: 3
-2018-12-20 14:24:40.187 [main] DEBUG c.y.o.d.P.queryProductCategoryList - ==>  Preparing: select product_category_id, product_category_name, shop_id, priority, create_time from tb_product_category where shop_id = ? order by priority desc 
-2018-12-20 14:24:40.223 [main] DEBUG c.y.o.d.P.queryProductCategoryList - ==> Parameters: 1(Long)
-2018-12-20 14:24:40.256 [main] DEBUG c.y.o.d.P.queryProductCategoryList - <==      Total: 3
-2018-12-20 15:39:56.151 [main] DEBUG c.y.o.d.P.batchInsertProductCategory - ==>  Preparing: insert into tb_product_category( product_category_name, shop_id, priority, create_time) values ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2018-12-20 15:39:56.220 [main] DEBUG c.y.o.d.P.batchInsertProductCategory - ==> Parameters: 商品类别2(String), 1(Long), 2(Integer), 2018-12-20 15:39:55.867(Timestamp), null, null, null, null
-2018-12-20 15:41:44.409 [main] DEBUG c.y.o.d.P.batchInsertProductCategory - ==>  Preparing: insert into tb_product_category( product_category_name, shop_id, priority, create_time) values ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2018-12-20 15:41:44.446 [main] DEBUG c.y.o.d.P.batchInsertProductCategory - ==> Parameters: 商品类别1(String), 1(Long), 1(Integer), 2018-12-20 15:41:44.152(Timestamp), 商品类别2(String), 1(Long), 2(Integer), 2018-12-20 15:41:44.152(Timestamp)
-2018-12-20 15:41:44.588 [main] DEBUG c.y.o.d.P.batchInsertProductCategory - <==    Updates: 2
-2018-12-20 15:47:20.620 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id = ? and shop_id = ? 
-2018-12-20 15:47:20.655 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 7(Long), 2(Long)
-2018-12-20 15:47:20.667 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 0
-2018-12-20 15:48:05.016 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id = ? and shop_id = ? 
-2018-12-20 15:48:05.052 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 8(Long), 2(Long)
-2018-12-20 15:48:05.053 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 0
-2018-12-20 15:48:14.800 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id = ? and shop_id = ? 
-2018-12-20 15:48:14.833 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 8(Long), 1(Long)
-2018-12-20 15:48:14.996 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 1
-2018-12-20 15:53:50.050 [main] DEBUG c.y.o.d.P.queryProductCategoryList - ==>  Preparing: select product_category_id, product_category_name, shop_id, priority, create_time from tb_product_category where shop_id = ? order by priority desc 
-2018-12-20 15:53:50.083 [main] DEBUG c.y.o.d.P.queryProductCategoryList - ==> Parameters: 1(Long)
-2018-12-20 15:53:50.117 [main] DEBUG c.y.o.d.P.queryProductCategoryList - <==      Total: 5
-2018-12-20 15:53:50.127 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id = ? and shop_id = ? 
-2018-12-20 15:53:50.127 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 7(Long), 1(Long)
-2018-12-20 15:53:50.293 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 1
-2018-12-20 15:53:50.294 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id = ? and shop_id = ? 
-2018-12-20 15:53:50.295 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 8(Long), 1(Long)
-2018-12-20 15:53:50.394 [main] DEBUG c.y.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 1
+2018-12-25 09:13:05.408 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: insert into tb_product_img(img_addr,img_desc,priority,create_time,product_id) values (?,?,?, ?,?) , (?,?,?, ?,?) 
+2018-12-25 09:13:05.470 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: 图片1(String), 测试图片1(String), 1(Integer), 2018-12-25 09:13:05.034(Timestamp), 13(Long), 图片2(String), null, 1(Integer), 2018-12-25 09:13:05.034(Timestamp), 13(Long)
+2018-12-25 09:13:05.658 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-12-25 09:14:59.377 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 09:14:59.408 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 13(Long)
+2018-12-25 09:16:06.792 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: insert into tb_product_img(img_addr,img_desc,priority,create_time,product_id) values (?,?,?, ?,?) , (?,?,?, ?,?) 
+2018-12-25 09:16:06.823 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: 图片1(String), 测试图片1(String), 1(Integer), 2018-12-25 09:16:06.542(Timestamp), 13(Long), 图片2(String), null, 1(Integer), 2018-12-25 09:16:06.542(Timestamp), 13(Long)
+2018-12-25 09:16:06.995 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-12-25 09:16:07.026 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 09:16:07.026 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 13(Long)
+2018-12-25 09:16:40.427 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 09:16:40.474 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 13(Long)
+2018-12-25 09:16:48.943 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 09:16:48.974 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 13(Long)
+2018-12-25 09:22:30.366 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 09:22:30.407 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 13(Long)
+2018-12-25 09:22:30.438 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - <==      Total: 4
+2018-12-25 09:22:47.019 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 09:22:47.055 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 13(Long)
+2018-12-25 09:22:47.086 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - <==      Total: 4
+2018-12-25 09:24:29.160 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 09:24:29.186 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 13(Long)
+2018-12-25 09:24:29.241 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - <==      Total: 4
+2018-12-25 09:24:29.245 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - ==>  Preparing: delete from tb_product_img where product_id = ? 
+2018-12-25 09:24:29.245 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - ==> Parameters: 13(Long)
+2018-12-25 09:24:29.380 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - <==    Updates: 4
+2018-12-25 09:25:20.672 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: insert into tb_product_img(img_addr,img_desc,priority,create_time,product_id) values (?,?,?, ?,?) , (?,?,?, ?,?) 
+2018-12-25 09:25:20.723 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: 图片1(String), 测试图片1(String), 1(Integer), 2018-12-25 09:25:20.406(Timestamp), 13(Long), 图片2(String), null, 1(Integer), 2018-12-25 09:25:20.406(Timestamp), 13(Long)
+2018-12-25 09:25:20.836 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-12-25 09:25:20.889 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 09:25:20.889 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 13(Long)
+2018-12-25 09:25:20.904 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - <==      Total: 2
+2018-12-25 09:25:48.325 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: insert into tb_product_img(img_addr,img_desc,priority,create_time,product_id) values (?,?,?, ?,?) , (?,?,?, ?,?) 
+2018-12-25 09:25:48.372 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: 图片1(String), 测试图片1(String), 1(Integer), 2018-12-25 09:25:48.075(Timestamp), 13(Long), 图片2(String), null, 1(Integer), 2018-12-25 09:25:48.075(Timestamp), 13(Long)
+2018-12-25 09:25:48.482 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-12-25 09:25:48.514 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 09:25:48.514 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 13(Long)
+2018-12-25 09:25:48.530 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - <==      Total: 4
+2018-12-25 09:25:48.530 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - ==>  Preparing: delete from tb_product_img where product_id = ? 
+2018-12-25 09:25:48.530 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - ==> Parameters: 13(Long)
+2018-12-25 09:25:48.576 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - <==    Updates: 4
+2018-12-25 11:53:43.049 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductList - ==>  Preparing: select product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, point, product_category_id, shop_id from tb_product WHERE 1=1 order by priority desc limit ?,? 
+2018-12-25 11:53:43.091 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 4(Integer)
+2018-12-25 11:53:43.133 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductList - <==      Total: 4
+2018-12-25 15:43:18.785 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 15:43:18.821 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 18(Long)
+2018-12-25 15:43:18.860 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - <==      Total: 2
+2018-12-25 15:43:18.870 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/1/
+2018-12-25 15:43:18.871 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is:upload\images\item\shop\1\2018122515431856987.png
+2018-12-25 15:43:18.871 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is:E:\image\upload\images\item\shop\1\2018122515431856987.png
+2018-12-25 15:43:18.871 [main] DEBUG cn.yang.o2o.util.ImageUtil - basePath is:/E:/IdeaProjects/o2omaven/target/test-classes/
+2018-12-25 15:43:19.211 [main] DEBUG cn.yang.o2o.dao.ProductImgDao.queryProductImgList - ==>  Preparing: select product_img_id, img_addr, img_desc, priority, create_time from tb_product_img where product_id = ? order by product_img_id asc 
+2018-12-25 15:43:19.211 [main] DEBUG cn.yang.o2o.dao.ProductImgDao.queryProductImgList - ==> Parameters: 18(Long)
+2018-12-25 15:43:19.214 [main] DEBUG cn.yang.o2o.dao.ProductImgDao.queryProductImgList - <==      Total: 2
+2018-12-25 15:43:19.218 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - ==>  Preparing: delete from tb_product_img where product_id = ? 
+2018-12-25 15:43:19.218 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - ==> Parameters: 18(Long)
+2018-12-25 15:43:19.233 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - <==    Updates: 2
+2018-12-25 15:43:19.233 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/1/
+2018-12-25 15:43:19.233 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :upload\images\item\shop\1\2018122515431912530.png
+2018-12-25 15:43:19.233 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\upload\images\item\shop\1\2018122515431912530.png
+2018-12-25 15:43:19.322 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :upload\images\item\shop\1\2018122515431931590.png
+2018-12-25 15:43:19.322 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\upload\images\item\shop\1\2018122515431931590.png
+2018-12-25 15:43:19.416 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: insert into tb_product_img(img_addr,img_desc,priority,create_time,product_id) values (?,?,?, ?,?) , (?,?,?, ?,?) 
+2018-12-25 15:43:19.420 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: upload\images\item\shop\1\2018122515431912530.png(String), null, null, 2018-12-25 15:43:19.321(Timestamp), 18(Long), upload\images\item\shop\1\2018122515431931590.png(String), null, null, 2018-12-25 15:43:19.393(Timestamp), 18(Long)
+2018-12-25 15:43:19.427 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-12-25 15:43:19.437 [main] DEBUG cn.yang.o2o.dao.ProductDao.updateProduct - ==>  Preparing: update tb_product SET product_name = ?, product_desc = ?, img_addr = ?, last_edit_time = ?, product_category_id = ? where product_id = ? and shop_id = ? 
+2018-12-25 15:43:19.438 [main] DEBUG cn.yang.o2o.dao.ProductDao.updateProduct - ==> Parameters: 正式的商品(String), 正式的商品(String), upload\images\item\shop\1\2018122515431856987.png(String), 2018-12-25 15:43:18.765(Timestamp), 1(Long), 18(Long), 1(Long)
+2018-12-25 15:43:19.439 [main] DEBUG cn.yang.o2o.dao.ProductDao.updateProduct - <==    Updates: 1
+2018-12-25 16:02:15.167 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.point, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2018-12-25 16:02:15.198 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - ==> Parameters: 18(Long)
+2018-12-25 16:02:15.236 [main] DEBUG cn.yang.o2o.dao.ProductDao.queryProductById - <==      Total: 2
+2018-12-25 16:02:15.245 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/1/
+2018-12-25 16:02:15.246 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is:upload\images\item\shop\1\2018122516021553835.png
+2018-12-25 16:02:15.246 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is:E:\image\upload\images\item\shop\1\2018122516021553835.png
+2018-12-25 16:02:15.246 [main] DEBUG cn.yang.o2o.util.ImageUtil - basePath is:/E:/IdeaProjects/o2omaven/target/test-classes/
+2018-12-25 16:02:15.372 [main] DEBUG cn.yang.o2o.dao.ProductImgDao.queryProductImgList - ==>  Preparing: select product_img_id, img_addr, img_desc, priority, create_time from tb_product_img where product_id = ? order by product_img_id asc 
+2018-12-25 16:02:15.373 [main] DEBUG cn.yang.o2o.dao.ProductImgDao.queryProductImgList - ==> Parameters: 18(Long)
+2018-12-25 16:02:15.375 [main] DEBUG cn.yang.o2o.dao.ProductImgDao.queryProductImgList - <==      Total: 2
+2018-12-25 16:02:15.378 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - ==>  Preparing: delete from tb_product_img where product_id = ? 
+2018-12-25 16:02:15.378 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - ==> Parameters: 18(Long)
+2018-12-25 16:02:15.390 [main] DEBUG c.y.o.d.ProductImgDao.deleteProductImgByProductId - <==    Updates: 2
+2018-12-25 16:02:15.391 [main] DEBUG cn.yang.o2o.util.PathUtil - dest:upload/images/item/shop/1/
+2018-12-25 16:02:15.391 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :upload\images\item\shop\1\2018122516021523240.png
+2018-12-25 16:02:15.391 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\upload\images\item\shop\1\2018122516021523240.png
+2018-12-25 16:02:15.480 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :upload\images\item\shop\1\2018122516021579686.png
+2018-12-25 16:02:15.480 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\upload\images\item\shop\1\2018122516021579686.png
+2018-12-25 16:02:15.574 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: insert into tb_product_img(img_addr,img_desc,priority,create_time,product_id) values (?,?,?, ?,?) , (?,?,?, ?,?) 
+2018-12-25 16:02:15.579 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: upload\images\item\shop\1\2018122516021523240.png(String), null, null, 2018-12-25 16:02:15.48(Timestamp), 18(Long), upload\images\item\shop\1\2018122516021579686.png(String), null, null, 2018-12-25 16:02:15.55(Timestamp), 18(Long)
+2018-12-25 16:02:15.581 [main] DEBUG c.yang.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-12-25 16:02:15.591 [main] DEBUG cn.yang.o2o.dao.ProductDao.updateProduct - ==>  Preparing: update tb_product SET product_name = ?, product_desc = ?, img_addr = ?, last_edit_time = ?, product_category_id = ? where product_id = ? and shop_id = ? 
+2018-12-25 16:02:15.592 [main] DEBUG cn.yang.o2o.dao.ProductDao.updateProduct - ==> Parameters: 正式的商品(String), 正式的商品(String), upload\images\item\shop\1\2018122516021553835.png(String), 2018-12-25 16:02:15.143(Timestamp), 1(Long), 18(Long), 1(Long)
+2018-12-25 16:02:15.594 [main] DEBUG cn.yang.o2o.dao.ProductDao.updateProduct - <==    Updates: 1

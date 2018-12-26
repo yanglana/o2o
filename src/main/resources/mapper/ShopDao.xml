@@ -19,7 +19,7 @@
             <id column="area_id" property="areaId"/>
             <result column="area_name" property="areaName"/>
         </association>
-        <association property="shopCategory" column="shop_category" javaType="cn.yang.o2o.entity.ShopCategory">
+        <association property="shopCategory" column="shop_category_id" javaType="cn.yang.o2o.entity.ShopCategory">
             <id column="shop_category_id" property="shopCategoryId"/>
             <result column="shop_category_name" property="shopCategoryName"/>
         </association>

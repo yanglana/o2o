@@ -1,5 +1,6 @@
 package cn.yang.o2o.service;
 
+import cn.yang.o2o.dto.ImageHolder;
 import cn.yang.o2o.dto.ShopExecution;
 import cn.yang.o2o.entity.Shop;
 import cn.yang.o2o.exceptions.ShopOperationException;
@@ -27,12 +28,12 @@ public interface ShopService {
      * @Param [shop, shopImgInputStream, fileName]
      * @Return cn.yang.o2o.dto.ShopExecution
      */
-    ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException;
+    ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 
     /*
      * @Description 注册店铺信息，包括图片处理
      * @Param [shop, shopImgInputStream, fileName]
      * @Return cn.yang.o2o.dto.ShopExecution
      */
-    ShopExecution addShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException;
+    ShopExecution addShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 }

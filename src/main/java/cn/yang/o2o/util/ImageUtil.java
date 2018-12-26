@@ -1,5 +1,6 @@
 package cn.yang.o2o.util;
 
+import cn.yang.o2o.dto.ImageHolder;
 import cn.yang.o2o.dto.ShopExecution;
 import cn.yang.o2o.entity.Area;
 import cn.yang.o2o.entity.PersonInfo;
@@ -34,14 +35,14 @@ public class ImageUtil {
     private static final Random r = new Random();
     private static Logger logger = LoggerFactory.getLogger(ImageUtil.class);
 
-    
+
     /*
      * @Description 将CommonsMultipartFile转换成File类
      * @Param [cFile]
      * @Return java.io.File
      */
-    public static File transferCommonsMultipartFile(CommonsMultipartFile cFile){
-        File newFile =new File(cFile.getOriginalFilename());
+    public static File transferCommonsMultipartFile(CommonsMultipartFile cFile) {
+        File newFile = new File(cFile.getOriginalFilename());
         try {
             cFile.transferTo(newFile);
         } catch (IOException e) {
@@ -56,11 +57,11 @@ public class ImageUtil {
      * @Param [thumbnail, targetAddr:图片存储路径]
      * @Return java.lang.String
      */
-    public static String generateThumbnail(InputStream thumbnailInputStream, String fileName, String targetAddr) {
+    public static String generateThumbnail(ImageHolder thumbnail, String targetAddr) {
         //获取不重复的随机名
         String realFileName = getRandomFileName();
         //获取扩展名  随机名+扩展名=新名字
-        String extension = getFileExtension(fileName);
+        String extension = getFileExtension(thumbnail.getImageName());
         //如果目标路径不存在，则自动创建
         makeDirPath(targetAddr);
         //获取文件存储的相对路径(带文件名)
@@ -72,13 +73,44 @@ public class ImageUtil {
         logger.debug("basePath is:" + basePath);
         // 调用Thumbnails生成带有水印的图片
         try {
-            Thumbnails.of(thumbnailInputStream).size(200, 200)
+            Thumbnails.of(thumbnail.getImage()).size(200, 200)
                     .watermark(Positions.BOTTOM_RIGHT,
                             ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
                     .outputQuality(0.8f).toFile(dest);
         } catch (IOException e) {
             logger.error(e.toString());
             throw new RuntimeException("创建缩略图失败：" + e.toString());
+        }
+        // 返回图片相对路径地址
+        return relativeAddr;
+    }
+
+    /*
+     * @Description 处理详情图，并返回新生成图片的相对值路径
+     * @Param [productImageHolder, dest]
+     * @Return java.lang.String
+     */
+    public static String generateNormalImg(ImageHolder thumbnail, String targetAddr) {
+        // 获取不重复的随机名
+        String realFileName = getRandomFileName();
+        // 获取文件的扩展名如png,jpg等
+        String extension = getFileExtension(thumbnail.getImageName());
+        // 如果目标路径不存在，则自动创建
+        makeDirPath(targetAddr);
+        // 获取文件存储的相对路径(带文件名)
+        String relativeAddr = targetAddr + realFileName + extension;
+        logger.debug("current relativeAddr is :" + relativeAddr);
+        // 获取文件要保存到的目标路径
+        File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
+        logger.debug("current complete addr is :" + PathUtil.getImgBasePath() + relativeAddr);
+        // 调用Thumbnails生成带有水印的图片
+        try {
+            Thumbnails.of(thumbnail.getImage()).size(337, 640)
+                    .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
+                    .outputQuality(0.9f).toFile(dest);
+        } catch (IOException e) {
+            logger.error(e.toString());
+            throw new RuntimeException("创建缩图片失败：" + e.toString());
         }
         // 返回图片相对路径地址
         return relativeAddr;
@@ -128,7 +160,7 @@ public class ImageUtil {
                 .outputQuality(0.8f).toFile("E:/image/xiaohuangrennew.jpg");
 
     }
-    
+
     /*
      * @Description storePath是文件的路径还是目录的路径， 如果storePath是文件路径则删除该文件，
      * 如果storePath是目录路径则删除该目录下的所有文件
@@ -136,10 +168,10 @@ public class ImageUtil {
      * @Return void
      */
     public static void deleteFileOrPath(String storePath) {
-        File fileOrPath = new File(PathUtil.getImgBasePath()+storePath);
+        File fileOrPath = new File(PathUtil.getImgBasePath() + storePath);
         if (fileOrPath.exists()) {
             if (fileOrPath.isDirectory()) {
-                File files[]=fileOrPath.listFiles();
+                File files[] = fileOrPath.listFiles();
                 for (int i = 0; i < files.length; i++) {
                     files[i].delete();
                 }

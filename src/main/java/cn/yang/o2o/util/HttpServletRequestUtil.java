@@ -1,5 +1,7 @@
 package cn.yang.o2o.util;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -34,7 +36,7 @@ public class HttpServletRequestUtil {
 
     public static boolean getBoolean(HttpServletRequest request, String key) {
         try {
-            return Boolean.valueOf(key);
+            return Boolean.valueOf(request.getParameter(key));
         } catch (Exception e) {
             return false;
         }

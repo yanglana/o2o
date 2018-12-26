@@ -95,6 +95,14 @@ public class Product {
         this.priority = priority;
     }
 
+    public Integer getPoint() {
+        return point;
+    }
+
+    public void setPoint(Integer point) {
+        this.point = point;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
