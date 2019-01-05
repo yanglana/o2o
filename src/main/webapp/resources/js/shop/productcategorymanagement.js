@@ -43,7 +43,6 @@ $(function () {
 
     $('#submit').click(function () {
         var tempArr = $('.temp');
-        alert(tempArr.toArray());
         var productCategoryList = [];
         //遍历获取新加中的值(在创建的时候要标记)
         tempArr.map(function (index, domElement) {

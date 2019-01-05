@@ -15,13 +15,69 @@
             parent_id
         from tb_shop_category
         <where>
-            <if test="shopCategoryCondition !=null">
+            <if test="shopCategoryCondition == null">
+                and parent_id is null
+            </if>
+            <if test="shopCategoryCondition != null">
               and parent_id is not null
             </if>
-            <if test="shopCategoryCondition.parent!=null">
+            <if test="shopCategoryCondition != null and shopCategoryCondition.parent!=null
+                      and shopCategoryCondition.parent.shopCategoryId != null">
               and parent_id = #{shopCategoryCondition.parent.shopCategoryId}
             </if>
         </where>
         order by priority desc
     </select>
+
+    <select id="queryShopCategoryById" parameterType="Long" resultType="cn.yang.o2o.entity.ShopCategory">
+        select shop_category_id, shop_category_name,shop_category_desc,
+               shop_category_img,priority,create_time,last_edit_time,parent_id
+        from tb_shop_category
+        where shop_category_id = #{shopCategoryId}
+    </select>
+
+    <select id="queryShopCategoryByIds" resultType="cn.yang.o2o.entity.ShopCategory">
+        select shop_category_id,shop_category_name,shop_category_desc,
+               shop_category_img,priority,create_time,last_edit_time,parent_id
+        from tb_shop_category
+        where shop_category_id in
+        <foreach collection="list" item="shopCategoryId" open="(" separator="," close=")">
+            #{shopCategoryId}
+        </foreach>
+    </select>
+
+    <insert id="insertShopCategory" useGeneratedKeys="true" keyColumn="shop_category_id" keyProperty="shopCategoryId">
+        insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img,
+                                     priority,create_time,last_edit_time,parent_id)
+        values(#{shopCategoryCondition.shopCategoryName},#{shopCategoryCondition.shopCategoryDesc},
+               #{shopCategoryCondition.shopCategoryImg},#{shopCategoryCondition.priority},
+               #{shopCategoryCondition.createTime},#{shopCategoryCondition.lastEditTime},
+               #{shopCategoryCondition.parent.shopCategoryId})
+    </insert>
+
+    <update id="updateShopCategory" parameterType="cn.yang.o2o.entity.ShopCategory">
+        update tb_shop_category
+        <set>
+            <if test="shopCategoryName != null">shop_category_name=#{shopCategoryName},</if>
+            <if test="shopCategoryDesc != null">shop_category_desc=#{shopCategoryDesc},</if>
+            <if test="shopCategoryImg != null">shop_category_img=#{shopCategoryImg},</if>
+            <if test="priority != null">priority=#{priority},</if>
+            <if test="lastEditTime != null">last_edit_time=#{lastEditTime},</if>
+            <if test="parent != null and parent.parentId != null">parent_id=#{parent.parentId}</if>
+        </set>
+        where shop_category_id = #{shopCategoryId}
+    </update>
+
+    <delete id="deleteShopCategory">
+        delete from tb_shop_category
+        where shop_category_id = #{shopCategoryId}
+    </delete>
+
+    <delete id="batchDeleteShopCategory" parameterType="long">
+        delete from tb_shop_category
+        where shop_category_id in
+        <foreach collection="list" item="shopCategoryId" open="(" separator="," close=")">
+            #{shopCategoryId}
+        </foreach>
+    </delete>
 </mapper>

@@ -35,9 +35,22 @@ public class PathUtil {
      * @Return
      */
     public static String getShopImagePath(long shopId){
-        String imagePath = "upload/images/item/shop/"+shopId+"/";
+        String imagePath = "/upload/images/item/shop/"+shopId+"/";
         logger.debug("dest:"+imagePath);
         return imagePath.replace("/",separator);
     }
 
+    public static String getShopCategoryImagePath(){
+        String imagePath = "/upload/images/item/shopcategory/";
+        return imagePath.replace("/",separator);
+    }
+
+    public static String getHeadLineImagePath(){
+        String imagePath = "/upload/images/item/headtitle/";
+        return imagePath.replace("/",separator);
+    }
+
+    public static String transferToLink(String path){
+        return path.replace(separator,"/");
+    }
 }

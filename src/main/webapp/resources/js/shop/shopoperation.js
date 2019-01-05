@@ -105,13 +105,11 @@ $(function () {
 
         // 获取表单里输入的验证码
         var verifyCodeActual = $('#j_captcha').val();
-        //alert(verifyCodeActual);
         if (!verifyCodeActual) {
             $.toast('请输入验证码!');
             return;
         }
         formData.append("verifyCodeActual", verifyCodeActual);
-        //alert(formData.toString());
         // 将数据提交至后台处理相关操作
         $.ajax({
             url: (isEdit ? editShopUrl : registerShopUrl),
@@ -123,6 +121,7 @@ $(function () {
             success: function (data) {
                 if (data.success) {
                     $.toast('提交成功!');
+                    setTimeout("location.href='/shopadmin/shopoperation'",2000);
                 } else {
                     $.toast('提交失败!' + data.errMsg);
                 }

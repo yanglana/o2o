@@ -56,6 +56,7 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
+    @Transactional
     public ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException {
         if (shop == null && shop.getShopId() == null) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);
@@ -85,7 +86,8 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public ShopExecution addShop(Shop shop,ImageHolder thumbnail) {
+    @Transactional
+    public ShopExecution addShop(Shop shop,ImageHolder thumbnail) throws ShopOperationException{
         //空值判断
         if (shop == null) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);

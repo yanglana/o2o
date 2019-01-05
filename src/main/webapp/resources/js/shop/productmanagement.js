@@ -62,6 +62,14 @@ $(function () {
         }
     });
 
+    $('#new').on('click',function () {
+       window.location.href = "/shopadmin/productoperation";
+    });
+
+    $('#back').on('click',function () {
+        window.location.href = "/shopadmin/shopmanagement";
+    });
+
     function changeItemStatus(id,enableStatus) {
         // 定义product json对象并添加productId以及状态(上架/下架)
         var product = {};

@@ -10,7 +10,6 @@ $(function () {
     // 由于商品添加和编辑使用的是同一个页面，
     // 该标识符用来标明本次是添加还是编辑操作
     var isEdit = false;
-    alert(productId);
     if (productId) {
         // 若有productId则为编辑操作
         getInfo(productId);
@@ -56,7 +55,7 @@ $(function () {
             if (data.success) {
                 var productCategoryList = data.data;
                 var optionHtml = '';
-                productCategoryList.map(function (index, domElement) {
+                productCategoryList.map(function(index, domElement) {
                     optionHtml += '<option data-value ="'+index.productCategoryId+'">'+
                                      index.productCategoryName +
                                  '</option>';
@@ -115,25 +114,25 @@ $(function () {
         }
         formData.append("verifyCodeActual",verifyCodeActual);
         // 将数据提交至后台处理相关操作
-        $.confirm('确定么?', function() {
-            // 上下架相关商品
-            $.ajax({
-                url : statusUrl,
-                type : 'POST',
-                data : {
-                    productStr : JSON.stringify(product),
-                    statusChange : true
-                },
-                dataType : 'json',
-                success : function(data) {
-                    if (data.success) {
-                        $.toast('操作成功！');
-                        getList();
-                    } else {
-                        $.toast('操作失败！');
-                    }
+        $.ajax({
+            url : productPostUrl,
+            type : 'POST',
+            data : formData,
+            contentType : false,
+            processData : false,
+            success : function(data) {
+                if (data.success) {
+                    $.toast('提交成功!');
+                    window.location.reload(true);
+                } else {
+                    $.toast('提交失败!');
+                    $('#captcha_img').click();
                 }
-            });
+            }
         });
+    });
+
+    $('#back').on('click', function () {
+       window.location.href = "/shopadmin/productmanagement";
     });
 });

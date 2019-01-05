@@ -27,19 +27,23 @@ public class ShopDaoTest extends BaseTest {
     @Test
     public void testQueryShopListAndCount(){
         Shop shopCondition = new Shop();
-        PersonInfo owner = new PersonInfo();
-        Area area = new Area();
+        /*PersonInfo owner = new PersonInfo();
+        Area area = new Area();*/
         ShopCategory shopCategory = new ShopCategory();
-        shopCategory.setShopCategoryId(2L);
+        ShopCategory parentCategory = new ShopCategory();
+        parentCategory.setShopCategoryId(8L);
+        shopCategory.setParent(parentCategory);
+        //shopCategory.setShopCategoryId(2L);
         //area.setAreaId(2);
         //wner.setUserId(2L);
         //shopCondition.setShopName("3");
         //shopCondition.setEnableStatus(0);
-        shopCondition.setOwner(owner);
-        shopCondition.setArea(area);
+        //shopCondition.setOwner(owner);
+        //shopCondition.setArea(area);
         shopCondition.setShopCategory(shopCategory);
         List<Shop> shopList = shopDao.queryShopList(shopCondition,0,10);
         System.out.println("店铺列表大小:"+shopList.size());
+        System.out.println("店铺名:"+shopList.get(0).getShopName()+shopList.get(1).getShopName());
         shopCategory = new ShopCategory();
         shopCondition.setShopCategory(shopCategory);
         int count = shopDao.queryShopCount(shopCondition);
@@ -63,7 +67,7 @@ public class ShopDaoTest extends BaseTest {
         Area area = new Area();
         ShopCategory shopCategory = new ShopCategory();
         owner.setUserId(1L);
-        area.setAreaId(2);
+        area.setAreaId(2L);
         shopCategory.setShopCategoryId(1L);
         shop.setOwner(owner);
         shop.setArea(area);

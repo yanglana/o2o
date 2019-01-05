@@ -54,10 +54,9 @@ public class AreaController {
     }
 
 
-   @RequestMapping(value = "/in")
+    @RequestMapping(value = "/in")
     private String index() {
         return "index";
     }
-
 
 }

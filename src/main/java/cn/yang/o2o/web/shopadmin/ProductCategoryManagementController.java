@@ -30,26 +30,6 @@ public class ProductCategoryManagementController {
     @Autowired
     private ProductCategoryService productCategoryService;
 
-    @RequestMapping(value = "/getproductcategorylist", method = RequestMethod.GET)
-    @ResponseBody
-    //只返回一个对象所以可以自定义返回集
-    public Result<List<ProductCategory>> getProductCategoryList(HttpServletRequest request) {
-        // TO be removed
-        /*Shop shop = new Shop();
-        shop.setShopId(1L);
-        request.getSession().setAttribute("currentShop", shop);*/
-
-        Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
-        List<ProductCategory> list = null;
-        if (currentShop != null && currentShop.getShopId() > 0) {
-            list = productCategoryService.getProductCategoryList(currentShop.getShopId());
-            return new Result<List<ProductCategory>>(true, list);
-        } else {
-            ProductCategoryStateEnum ps = ProductCategoryStateEnum.INNER_ERROR;
-            return new Result<List<ProductCategory>>(false, ps.getState(), ps.getStateInfo());
-        }
-    }
-
     @RequestMapping(value = "/addproductcategorys", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> addProductCategorys(@RequestBody List<ProductCategory> productCategoryList, HttpServletRequest request) {
@@ -74,9 +54,24 @@ public class ProductCategoryManagementController {
             }
         } else {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "请至少输入一个商品类别");
+            modelMap.put("errMsg",  "请至少输入一个商品类别");
         }
         return modelMap;
+    }
+
+    @RequestMapping(value = "/getproductcategorylist", method = RequestMethod.GET)
+    @ResponseBody
+    public Result<List<ProductCategory>> getProductCategoryList(HttpServletRequest request) {
+        //只返回一个对象所以可以自定义返回集
+        Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+        List<ProductCategory> list = null;
+        if (currentShop != null && currentShop.getShopId() > 0) {
+            list = productCategoryService.getProductCategoryList(currentShop.getShopId());
+            return new Result<List<ProductCategory>>(true, list);
+        } else {
+            ProductCategoryStateEnum ps = ProductCategoryStateEnum.INNER_ERROR;
+            return new Result<List<ProductCategory>>(false, ps.getState(), ps.getStateInfo());
+        }
     }
 
     @RequestMapping(value = "/removeproductcategory", method = RequestMethod.POST)
