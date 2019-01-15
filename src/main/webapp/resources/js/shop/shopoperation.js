@@ -8,13 +8,13 @@ $(function () {
     // 该标识符用来标明本次是添加还是编辑操作
     var isEdit = shopId ? true : false;
     // 用于店铺注册时候的店铺类别以及区域列表的初始化的URL
-    var initUrl = "/shopadmin/getshopinitinfo";
+    var initUrl = "/o2omaven/shopadmin/getshopinitinfo";
     // 注册店铺的URL
-    var registerShopUrl = "/shopadmin/registershop";
+    var registerShopUrl = "/o2omaven/shopadmin/registershop";
     // 编辑店铺钱需要获取店铺信息，这里为获取当前店铺信息的URL
-    var shopInfoUrl = "/shopadmin/getshopbyid?shopId=" + shopId;
+    var shopInfoUrl = "/o2omaven/shopadmin/getshopbyid?shopId=" + shopId;
     // 编辑店铺信息的UTL
-    var editShopUrl = "/shopadmin/modifyshop";
+    var editShopUrl = "/o2omaven/shopadmin/modifyshop";
 
     if (!isEdit) {
         getShopInitInfo();
@@ -121,7 +121,7 @@ $(function () {
             success: function (data) {
                 if (data.success) {
                     $.toast('提交成功!');
-                    setTimeout("location.href='/shopadmin/shopoperation'",2000);
+                    setTimeout("location.href='/o2omaven/shopadmin/shopoperation'",2000);
                 } else {
                     $.toast('提交失败!' + data.errMsg);
                 }

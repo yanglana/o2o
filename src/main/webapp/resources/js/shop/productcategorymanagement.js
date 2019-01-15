@@ -1,7 +1,7 @@
 $(function () {
-    var listUrl = "/shopadmin/getproductcategorylist";
-    var addUrl = "/shopadmin/addproductcategorys";
-    var deleteUrl = "/shopadmin/removeproductcategory";
+    var listUrl = "/o2omaven/shopadmin/getproductcategorylist";
+    var addUrl = "/o2omaven/shopadmin/addproductcategorys";
+    var deleteUrl = "/o2omaven/shopadmin/removeproductcategory";
 
     getList();
 

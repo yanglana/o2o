@@ -2,11 +2,11 @@ $(function () {
     // 从URL里获取productId参数的值
     var productId = getQueryString("productId");
     // 通过productId获取商品信息的URL
-    var infoUrl = "/shopadmin/getproductbyid?productId="+productId;
+    var infoUrl = "/o2omaven/shopadmin/getproductbyid?productId="+productId;
     // 获取当前店铺设定的商品类别列表的URL
-    var categoryUrl = "/shopadmin/getproductcategorylist";
+    var categoryUrl = "/o2omaven/shopadmin/getproductcategorylist";
     // 更新商品信息的URL
-    var productPostUrl = "/shopadmin/modifyproduct";
+    var productPostUrl = "/o2omaven/shopadmin/modifyproduct";
     // 由于商品添加和编辑使用的是同一个页面，
     // 该标识符用来标明本次是添加还是编辑操作
     var isEdit = false;
@@ -16,7 +16,7 @@ $(function () {
         isEdit = true;
     } else {
         getCategory();
-        productPostUrl = "/shopadmin/addproduct";
+        productPostUrl = "/o2omaven/shopadmin/addproduct";
     }
 
     // 获取需要编辑的商品的商品信息，并赋值给表单
@@ -133,6 +133,6 @@ $(function () {
     });
 
     $('#back').on('click', function () {
-       window.location.href = "/shopadmin/productmanagement";
+       window.location.href = "/o2omaven/shopadmin/productmanagement";
     });
 });

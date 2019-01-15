@@ -2,7 +2,7 @@ $(function () {
     // 从地址栏的URL里获取productId
     var productId = getQueryString("productId");
     // 获取商品信息的URL
-    var listUrl = "/frontend/listproductdetailpageinfo?productId="+productId;
+    var listUrl = "/o2omaven/frontend/listproductdetailpageinfo?productId="+productId;
 
     // 访问后台获取该商品的信息并渲染
     $.getJSON(listUrl,function (data) {

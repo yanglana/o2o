@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="o2omaven:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/o2omaven</output-path>
+    <root id="archive" name="o2omaven.war">
+      <element id="artifact" artifact-name="o2omaven:war exploded" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

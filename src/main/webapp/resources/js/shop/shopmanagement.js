@@ -1,6 +1,6 @@
 $(function () {
     var shopId = getQueryString('shopId');
-    var shopInfoUrl = "/shopadmin/getshopmanagementinfo?shopId=" + shopId;
+    var shopInfoUrl = "/o2omaven/shopadmin/getshopmanagementinfo?shopId=" + shopId;
     $.getJSON(shopInfoUrl, function (data) {
         if (data.redirect) {
             window.location.href = data.url;
@@ -8,7 +8,7 @@ $(function () {
             if (data.shopId != undefined && data.shopId != null) {
                 shopId = data.shopId;
             }
-            $('#shopInfo').attr('href', '/shopadmin/shopoperation?shopId=' + shopId);
+            $('#shopInfo').attr('href', '/o2omaven/shopadmin/shopoperation?shopId=' + shopId);
         }
     });
 });

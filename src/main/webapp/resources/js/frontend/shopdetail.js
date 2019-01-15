@@ -5,7 +5,7 @@ $(function () {
     // 默认一页返回的商品数
     var pageSize = 3;
     // 列出商品列表的URL
-    var listUrl = '/frontend/listproductsbyshop';
+    var listUrl = '/o2omaven/frontend/listproductsbyshop';
     // 默认的页码
     var pageNum = 1;
     // 从地址栏里获取ShopId
@@ -13,7 +13,7 @@ $(function () {
     var productCategoryId = '';
     var productName = '';
     // 获取本店铺信息以及商品类别信息列表的URL
-    var searchDivUrl = '/frontend/listshopdetailpageinfo?shopId=' + shopId;
+    var searchDivUrl = '/o2omaven/frontend/listshopdetailpageinfo?shopId=' + shopId;
     // 渲染出店铺基本信息以及商品类别列表以供搜索
     getSearchDivData();
     // 预先加载10条商品信息
@@ -130,7 +130,7 @@ $(function () {
         }
     });
 
-    // 点击商品的卡片进入该商品的详情页
+    // 点击商品的 卡片进入该商品的详情页
     $('.list-div').on('click','.card',function (e) {
         var productId = e.currentTarget.dataset.productId;
         window.location.href = '/frontend/productdetail?productId='+productId;

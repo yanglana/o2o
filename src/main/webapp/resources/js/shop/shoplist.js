@@ -3,7 +3,7 @@ $(function () {
 
     function getlist(e) {
         $.ajax({
-            url: "/shopadmin/getshoplist",
+            url: "/o2omaven/shopadmin/getshoplist",
             type: "get",
             dataType: "json",
             success: function (data) {
@@ -41,7 +41,7 @@ $(function () {
     }
     function goShop(status, id) {
         if (status == 1) {
-            return '<a href="/shopadmin/shopmanagement?shopId='+id+'">进入</a>';
+            return '<a href="/o2omaven/shopadmin/shopmanagement?shopId='+id+'">进入</a>';
         } else {
             return "";
         }
