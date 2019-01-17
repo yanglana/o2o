@@ -1,2 +1,7 @@
-2018-11-30 11:11:19.200 [main] ERROR cn.yang.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
-2018-11-30 11:12:37.266 [main] ERROR cn.yang.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-01-16 16:06:37.733 [main] ERROR cn.yang.o2o.service.impl.WechatAuthServiceImpl - insertWechatAuth error: org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfkalfajfda' for key 'open_id'
+### The error may involve cn.yang.o2o.dao.WechatAuthDao.insertWechatAuth-Inline
+### The error occurred while setting parameters
+### SQL: insert into tb_wechat_auth(user_id, open_id, create_time)         values (?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfkalfajfda' for key 'open_id'
+; Duplicate entry 'dfkalfajfda' for key 'open_id'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfkalfajfda' for key 'open_id'

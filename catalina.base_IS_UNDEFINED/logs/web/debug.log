@@ -1,69 +1,17 @@
-2019-01-03 11:10:08.180 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - ==>  Preparing: select s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name from tb_shop s,tb_area a,tb_shop_category sc WHERE s.shop_category_id in (select shop_category_id from tb_shop_category where parent_id = ?) and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by s.priority desc limit ?,?; 
-2019-01-03 11:10:08.230 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 10(Integer)
-2019-01-03 11:10:08.261 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - <==      Total: 1
-2019-01-03 11:10:08.278 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_area a, tb_shop_category sc WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
-2019-01-03 11:10:08.278 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 
-2019-01-03 11:10:08.301 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2019-01-03 11:52:48.329 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - ==>  Preparing: select s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name from tb_shop s,tb_area a,tb_shop_category sc WHERE s.shop_category_id = ? and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by s.priority desc limit ?,?; 
-2019-01-03 11:52:48.373 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - ==> Parameters: 2(Long), 0(Integer), 10(Integer)
-2019-01-03 11:52:48.404 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - <==      Total: 2
-2019-01-03 11:52:48.411 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_area a, tb_shop_category sc WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
-2019-01-03 11:52:48.412 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 
-2019-01-03 11:52:48.414 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2019-01-03 12:04:20.080 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - ==>  Preparing: select s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name from tb_shop s,tb_area a,tb_shop_category sc WHERE s.shop_category_id in (select shop_category_id from tb_shop_category where parent_id = ?) and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by s.priority desc limit ?,?; 
-2019-01-03 12:04:20.113 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 10(Integer)
-2019-01-03 12:04:20.145 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - <==      Total: 2
-2019-01-03 12:04:20.153 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_area a, tb_shop_category sc WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
-2019-01-03 12:04:20.153 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 
-2019-01-03 12:04:20.155 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2019-01-03 14:11:35.714 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - ==>  Preparing: select s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name from tb_shop s,tb_area a,tb_shop_category sc WHERE s.shop_category_id in (select shop_category_id from tb_shop_category where parent_id = ?) and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id order by s.priority desc limit ?,?; 
-2019-01-03 14:11:35.753 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 10(Integer)
-2019-01-03 14:11:35.781 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopList - <==      Total: 2
-2019-01-03 14:11:35.790 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: select count(1) from tb_shop s, tb_area a, tb_shop_category sc WHERE s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id 
-2019-01-03 14:11:35.790 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 
-2019-01-03 14:11:35.792 [main] DEBUG cn.yang.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2019-01-03 16:07:24.361 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shopcategory\2019010316072419094.png
-2019-01-03 16:07:24.361 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\\upload\images\item\shopcategory\2019010316072419094.png
-2019-01-03 16:07:24.898 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) values(?,?, ?,?, ?,?, ?) 
-2019-01-03 16:07:24.944 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 理发(String), 理发(String), \upload\images\item\shopcategory\2019010316072419094.png(String), 74(Integer), 2019-01-03 16:07:24.358(Timestamp), 2019-01-03 16:07:24.358(Timestamp), 9(Long)
-2019-01-03 16:07:24.977 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
-2019-01-03 16:07:25.096 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shopcategory\2019010316072590277.png
-2019-01-03 16:07:25.096 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\\upload\images\item\shopcategory\2019010316072590277.png
-2019-01-03 16:07:25.139 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) values(?,?, ?,?, ?,?, ?) 
-2019-01-03 16:07:25.140 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 大排档(String), 大排档(String), \upload\images\item\shopcategory\2019010316072590277.png(String), 59(Integer), 2019-01-03 16:07:25.095(Timestamp), 2019-01-03 16:07:25.095(Timestamp), 10(Long)
-2019-01-03 16:07:25.167 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
-2019-01-03 16:07:25.250 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shopcategory\2019010316072595502.png
-2019-01-03 16:07:25.250 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\\upload\images\item\shopcategory\2019010316072595502.png
-2019-01-03 16:07:25.311 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) values(?,?, ?,?, ?,?, ?) 
-2019-01-03 16:07:25.312 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 奶茶店(String), 奶茶店(String), \upload\images\item\shopcategory\2019010316072595502.png(String), 58(Integer), 2019-01-03 16:07:25.249(Timestamp), 2019-01-03 16:07:25.249(Timestamp), 10(Long)
-2019-01-03 16:07:25.324 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
-2019-01-03 16:12:56.571 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shopcategory\2019010316125634792.jpg
-2019-01-03 16:12:56.572 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\\upload\images\item\shopcategory\2019010316125634792.jpg
-2019-01-03 16:12:56.804 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) values(?,?, ?,?, ?,?, ?) 
-2019-01-03 16:12:56.838 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: KTV(String), KTV(String), \upload\images\item\shopcategory\2019010316125634792.jpg(String), 55(Integer), 2019-01-03 16:12:56.569(Timestamp), 2019-01-03 16:12:56.569(Timestamp), 11(Long)
-2019-01-03 16:12:56.853 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
-2019-01-03 16:12:56.919 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shopcategory\2019010316125623644.png
-2019-01-03 16:12:56.919 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\\upload\images\item\shopcategory\2019010316125623644.png
-2019-01-03 16:12:56.962 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) values(?,?, ?,?, ?,?, ?) 
-2019-01-03 16:12:56.963 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 密室逃生(String), 密室逃生(String), \upload\images\item\shopcategory\2019010316125623644.png(String), 54(Integer), 2019-01-03 16:12:56.918(Timestamp), 2019-01-03 16:12:56.918(Timestamp), 11(Long)
-2019-01-03 16:12:56.995 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
-2019-01-03 16:12:57.109 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shopcategory\2019010316125715484.png
-2019-01-03 16:12:57.110 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\\upload\images\item\shopcategory\2019010316125715484.png
-2019-01-03 16:12:57.157 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) values(?,?, ?,?, ?,?, ?) 
-2019-01-03 16:12:57.158 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 程序设计(String), 程序设计(String), \upload\images\item\shopcategory\2019010316125715484.png(String), 50(Integer), 2019-01-03 16:12:57.109(Timestamp), 2019-01-03 16:12:57.109(Timestamp), 12(Long)
-2019-01-03 16:12:57.160 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
-2019-01-03 16:16:12.072 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shopcategory\2019010316161233439.png
-2019-01-03 16:16:12.073 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\\upload\images\item\shopcategory\2019010316161233439.png
-2019-01-03 16:16:12.261 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) values(?,?, ?,?, ?,?, ?) 
-2019-01-03 16:16:12.296 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 声乐舞蹈(String), 声乐舞蹈(String), \upload\images\item\shopcategory\2019010316161233439.png(String), 49(Integer), 2019-01-03 16:16:12.07(Timestamp), 2019-01-03 16:16:12.07(Timestamp), 12(Long)
-2019-01-03 16:16:12.309 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
-2019-01-03 16:16:12.429 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shopcategory\2019010316161299067.png
-2019-01-03 16:16:12.429 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\\upload\images\item\shopcategory\2019010316161299067.png
-2019-01-03 16:16:12.517 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) values(?,?, ?,?, ?,?, ?) 
-2019-01-03 16:16:12.518 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 演出道具(String), 演出道具(String), \upload\images\item\shopcategory\2019010316161299067.png(String), 45(Integer), 2019-01-03 16:16:12.428(Timestamp), 2019-01-03 16:16:12.428(Timestamp), 13(Long)
-2019-01-03 16:16:12.534 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
-2019-01-03 16:16:12.593 [main] DEBUG cn.yang.o2o.util.ImageUtil - current relativeAddr is :\upload\images\item\shopcategory\2019010316161271230.png
-2019-01-03 16:16:12.593 [main] DEBUG cn.yang.o2o.util.ImageUtil - current complete addr is :E:\image\\upload\images\item\shopcategory\2019010316161271230.png
-2019-01-03 16:16:12.618 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==>  Preparing: insert into tb_shop_category(shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id) values(?,?, ?,?, ?,?, ?) 
-2019-01-03 16:16:12.619 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - ==> Parameters: 交通工具(String), 交通工具(String), \upload\images\item\shopcategory\2019010316161271230.png(String), 44(Integer), 2019-01-03 16:16:12.592(Timestamp), 2019-01-03 16:16:12.592(Timestamp), 13(Long)
-2019-01-03 16:16:12.621 [main] DEBUG cn.yang.o2o.dao.ShopCategoryDao.insertShopCategory - <==    Updates: 1
+2019-01-16 16:06:37.391 [main] DEBUG cn.yang.o2o.dao.PersonInfoDao.insertPersonInfo - ==>  Preparing: insert into tb_person_info(name, profile_img, email, gender, enable_status, user_type, create_time, last_edit_time) values (?,?,?,?, ?,?,?,?) 
+2019-01-16 16:06:37.480 [main] DEBUG cn.yang.o2o.dao.PersonInfoDao.insertPersonInfo - ==> Parameters: 测试一下(String), null, null, null, 1(Integer), 1(Integer), 2019-01-16 16:06:36.95(Timestamp), null
+2019-01-16 16:06:37.531 [main] DEBUG cn.yang.o2o.dao.PersonInfoDao.insertPersonInfo - <==    Updates: 1
+2019-01-16 16:06:37.593 [main] DEBUG cn.yang.o2o.dao.WechatAuthDao.insertWechatAuth - ==>  Preparing: insert into tb_wechat_auth(user_id, open_id, create_time) values (?,?,?) 
+2019-01-16 16:06:37.598 [main] DEBUG cn.yang.o2o.dao.WechatAuthDao.insertWechatAuth - ==> Parameters: 3(Long), dfkalfajfda(String), 2019-01-16 16:06:36.95(Timestamp)
+2019-01-16 16:08:17.212 [main] DEBUG cn.yang.o2o.dao.WechatAuthDao.insertWechatAuth - ==>  Preparing: insert into tb_wechat_auth(user_id, open_id, create_time) values (?,?,?) 
+2019-01-16 16:08:17.269 [main] DEBUG cn.yang.o2o.dao.WechatAuthDao.insertWechatAuth - ==> Parameters: 1(Long), dfkalfajfda2(String), 2019-01-16 16:08:16.765(Timestamp)
+2019-01-16 16:08:17.370 [main] DEBUG cn.yang.o2o.dao.WechatAuthDao.insertWechatAuth - <==    Updates: 1
+2019-01-16 16:33:47.963 [main] DEBUG cn.yang.o2o.dao.PersonInfoDao.insertPersonInfo - ==>  Preparing: insert into tb_person_info(name, profile_img, email, gender, enable_status, user_type, create_time, last_edit_time) values (?,?,?,?, ?,?,?,?) 
+2019-01-16 16:33:48.008 [main] DEBUG cn.yang.o2o.dao.PersonInfoDao.insertPersonInfo - ==> Parameters: 测试一下(String), null, null, null, 1(Integer), 1(Integer), 2019-01-16 16:33:47.927(Timestamp), null
+2019-01-16 16:33:48.048 [main] DEBUG cn.yang.o2o.dao.PersonInfoDao.insertPersonInfo - <==    Updates: 1
+2019-01-16 16:33:48.065 [main] DEBUG cn.yang.o2o.dao.WechatAuthDao.insertWechatAuth - ==>  Preparing: insert into tb_wechat_auth(user_id, open_id, create_time) values (?,?,?) 
+2019-01-16 16:33:48.069 [main] DEBUG cn.yang.o2o.dao.WechatAuthDao.insertWechatAuth - ==> Parameters: 4(Long), dfkalfajfdaa(String), 2019-01-16 16:33:47.927(Timestamp)
+2019-01-16 16:33:48.098 [main] DEBUG cn.yang.o2o.dao.WechatAuthDao.insertWechatAuth - <==    Updates: 1
+2019-01-16 16:33:48.179 [main] DEBUG c.y.o2o.dao.WechatAuthDao.queryWechatInfoByOpenId - ==>  Preparing: select w.wechat_auth_id, w.user_id, w.open_id, w.create_time, p.user_id, p.name, p.email, p.profile_img, p.user_type, p.create_time, p.last_edit_time, p.enable_status from tb_wechat_auth w left join tb_person_info p on w.user_id = p.user_id where w.open_id = ? 
+2019-01-16 16:33:48.180 [main] DEBUG c.y.o2o.dao.WechatAuthDao.queryWechatInfoByOpenId - ==> Parameters: dfkalfajfdaa(String)
+2019-01-16 16:33:48.256 [main] DEBUG c.y.o2o.dao.WechatAuthDao.queryWechatInfoByOpenId - <==      Total: 1
