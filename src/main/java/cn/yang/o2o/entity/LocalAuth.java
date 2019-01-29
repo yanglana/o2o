@@ -20,11 +20,6 @@ public class LocalAuth {
     //用户ID
     private PersonInfo personInfo;
 
-    public LocalAuth(Long localAuthId, String username) {
-        this.localAuthId = localAuthId;
-        this.username = username;
-    }
-
     public Long getLocalAuthId() {
         return localAuthId;
     }

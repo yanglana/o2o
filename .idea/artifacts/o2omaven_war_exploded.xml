@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="o2omaven:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/o2omaven_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/target/o2o-maven</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -20,6 +20,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.1.1.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.7" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.7" />
@@ -35,9 +36,13 @@
           <element id="library" level="project" name="Maven: com.jhlabs:filters:2.0.235-1" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.2" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
+          <element id="library" level="project" name="Maven: redis.clients:jedis:2.9.0" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-pool2:2.4.2" />
         </element>
       </element>
-      <element id="library" level="application" name="@types/jquery" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/o2o-maven/META-INF/MANIFEST.MF" />
+      </element>
       <element id="javaee-facet-resources" facet="o2omaven/web/Web" />
     </root>
   </artifact>

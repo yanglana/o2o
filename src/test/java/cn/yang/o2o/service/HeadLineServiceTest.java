@@ -34,4 +34,9 @@ public class HeadLineServiceTest extends BaseTest {
         HeadLineExecution headLineExecution = headLineService.addHeadLine(headLine, thumbnail);
         assertEquals(HeadLineStateEnum.SUCCESS.getState(), headLineExecution.getState());
     }
+
+    @Test
+    public void testGetHeadLineList(){
+
+    }
 }

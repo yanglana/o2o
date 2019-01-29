@@ -17,10 +17,14 @@ import static org.junit.Assert.assertEquals;
 public class AreaServiceTest extends BaseTest {
     @Autowired
     private AreaService areaService;
+    @Autowired
+    private CacheService cacheService;
 
     @Test
     public void getAreaList(){
         List<Area> areaList = areaService.getAreaList();
-        assertEquals(2,areaList.size());
+        assertEquals(4,areaList.size());
+        cacheService.removeFromCache(areaService.AREALISTKEY);
+        areaList = areaService.getAreaList();
     }
 }

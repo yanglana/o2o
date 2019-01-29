@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface ShopCategoryService {
-
+    public static final String SCLISTKEY = "shopcategorylist";
     /*
      * @Description 根据查询条件获取ShopCategory列表
      * @Param [shopCategory]
