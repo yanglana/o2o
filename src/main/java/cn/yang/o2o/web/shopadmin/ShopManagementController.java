@@ -9,6 +9,7 @@ import cn.yang.o2o.entity.ShopCategory;
 import cn.yang.o2o.enums.ShopStateEnum;
 import cn.yang.o2o.exceptions.ShopOperationException;
 import cn.yang.o2o.service.AreaService;
+import cn.yang.o2o.service.PersonInfoService;
 import cn.yang.o2o.service.ShopCategoryService;
 import cn.yang.o2o.service.ShopService;
 import cn.yang.o2o.util.CodeUtil;
@@ -47,6 +48,8 @@ public class ShopManagementController {
     private ShopCategoryService shopCategoryService;
     @Autowired
     private AreaService areaService;
+    @Autowired
+    private PersonInfoService personInfoService;
 
     @RequestMapping(value = "/getshopmanagementinfo", method = RequestMethod.GET)
     @ResponseBody
@@ -76,9 +79,10 @@ public class ShopManagementController {
     @ResponseBody
     private Map<String, Object> getShopList(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<String, Object>();
-        PersonInfo user = new PersonInfo();
+        /*PersonInfo user = new PersonInfo();
         user.setUserId(1L);
-        user.setName("test");
+        user.setName("test");*/
+        PersonInfo user = personInfoService.getPersonInfoById(1L);
         request.getSession().setAttribute("user",user);
         user = (PersonInfo) request.getSession().getAttribute("user");
         try {

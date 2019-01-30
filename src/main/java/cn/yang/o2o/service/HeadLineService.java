@@ -9,7 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 public interface HeadLineService {
-    
+    public static final String HLLISTKEY = "headlinelist";
+
     /*
      * @Description 根据传入的条件返回指定的头条列表
      * @Param [headLineCondition]
