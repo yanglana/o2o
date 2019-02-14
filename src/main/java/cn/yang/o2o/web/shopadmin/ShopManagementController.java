@@ -81,10 +81,10 @@ public class ShopManagementController {
         Map<String, Object> modelMap = new HashMap<String, Object>();
         /*PersonInfo user = new PersonInfo();
         user.setUserId(1L);
-        user.setName("test");*/
+        user.setName("test");
         PersonInfo user = personInfoService.getPersonInfoById(1L);
-        request.getSession().setAttribute("user",user);
-        user = (PersonInfo) request.getSession().getAttribute("user");
+        request.getSession().setAttribute("user",user);*/
+        PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
         try {
             Shop shopCondition = new Shop();
             shopCondition.setOwner(user);
