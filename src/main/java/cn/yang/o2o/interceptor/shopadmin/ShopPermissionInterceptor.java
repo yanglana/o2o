@@ -21,8 +21,9 @@ public class ShopPermissionInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 从session中获取当前选择的店铺
-        Shop currentShop = (Shop) request.getSession().getAttribute("currentshop");
+        Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
         // 从session中获取当前用户可操作的店铺列表
+        @SuppressWarnings("unchecked")
         List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shopList");
         // 非空判断
         if (currentShop != null && shopList != null) {

@@ -54,7 +54,7 @@
             <mvc:exclude-mapping path="/shopadmin/shopoperation"/>
             <!-- shopmanage page -->
             <mvc:exclude-mapping path="/shopadmin/shopmanagement"/>
-            <mvc:exclude-mapping path="/shopadmin/getshopmanagement"/>
+            <mvc:exclude-mapping path="/shopadmin/getshopmanagementinfo"/>
             <bean id="ShopPermissionInterceptor"
                   class="cn.yang.o2o.interceptor.shopadmin.ShopPermissionInterceptor"/>
         </mvc:interceptor>

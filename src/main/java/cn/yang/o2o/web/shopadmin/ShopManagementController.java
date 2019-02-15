@@ -89,14 +89,11 @@ public class ShopManagementController {
             Shop shopCondition = new Shop();
             shopCondition.setOwner(user);
             ShopExecution se = shopService.getShopList(shopCondition,0,100);
-            if (se.getCount() > 0) {
-                modelMap.put("shopList", se.getShopList());
+            modelMap.put("shopList",se.getShopList());
+            // 列出店铺成功之后，将店铺放入session中作为权限验证依据，即该帐号只能操作它自己的店铺
+            request.getSession().setAttribute("shopList",se.getShopList());
                 modelMap.put("user", user);
                 modelMap.put("success", true);
-            } else {
-                modelMap.put("success",false);
-                modelMap.put("errMsg","没有店铺");
-            }
         } catch (Exception e) {
             modelMap.put("success",false);
             modelMap.put("errMsg",e.getMessage());
