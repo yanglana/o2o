@@ -6,38 +6,38 @@
     <select id="queryProductCategoryList" resultType="cn.yang.o2o.entity.ProductCategory"
             parameterType="Long">
         select
-            product_category_id,
-            product_category_name,
-            shop_id,
-            priority,
-            create_time
+        product_category_id,
+        product_category_name,
+        shop_id,
+        priority,
+        create_time
         from tb_product_category
         where shop_id = #{shopId}
         order by priority desc
     </select>
 
     <insert id="batchInsertProductCategory" parameterType="java.util.List">
-         insert into tb_product_category(
-             product_category_name,
-             shop_id,
-             priority,
-             create_time)
-         values
-            <foreach collection="list" item="productCategory" index="index" separator=",">
-                (
-                  #{productCategory.productCategoryName},
-                  #{productCategory.shopId},
-                  #{productCategory.priority},
-                  #{productCategory.createTime}
-                )
-            </foreach>
+        insert into tb_product_category(
+        product_category_name,
+        shop_id,
+        priority,
+        create_time)
+        values
+        <foreach collection="list" item="productCategory" index="index" separator=",">
+            (
+            #{productCategory.productCategoryName},
+            #{productCategory.shopId},
+            #{productCategory.priority},
+            #{productCategory.createTime}
+            )
+        </foreach>
     </insert>
 
     <delete id="deleteProductCategory">
         delete from tb_product_category
         where
-                product_category_id = #{productCategoryId}
-          and
-                shop_id = #{shopId}
+        product_category_id = #{productCategoryId}
+        and
+        shop_id = #{shopId}
     </delete>
 </mapper>

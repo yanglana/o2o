@@ -121,7 +121,7 @@ $(function () {
             success: function (data) {
                 if (data.success) {
                     $.toast('提交成功!');
-                    setTimeout("location.href='/o2omaven/shopadmin/shopoperation'",2000);
+                    setTimeout("location.href='/o2omaven/shopadmin/shopoperation'", 2000);
                 } else {
                     $.toast('提交失败!' + data.errMsg);
                 }

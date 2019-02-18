@@ -49,14 +49,14 @@ public class DESUtil {
      */
     public static String getEncryptString(String str) {
         // 基于BASE64编码，接收byte[]并转换成String
-        BASE64Encoder base64Encoder=new BASE64Encoder();
+        BASE64Encoder base64Encoder = new BASE64Encoder();
         try {
             // 按UTF8编码
             byte[] bytes = str.getBytes(CHARSETNAME);
             // 获取加密对象
             Cipher cipher = Cipher.getInstance(ALGORITHM);
             // 初始化密码信息
-            cipher.init(Cipher.ENCRYPT_MODE,key);
+            cipher.init(Cipher.ENCRYPT_MODE, key);
             // 加密
             byte[] doFinal = cipher.doFinal(bytes);
             // byte[]to encode好的String并返回
@@ -71,7 +71,7 @@ public class DESUtil {
      * @Param [string]
      * @Return java.lang.String
      */
-    public static String getDncryptString(String str) {
+    public static String getDecryptString(String str) {
         // 基于BASE64编码，接收byte[]并转换成String
         BASE64Decoder base64Decoder = new BASE64Decoder();
         try {
@@ -80,11 +80,11 @@ public class DESUtil {
             // 获取解密对象
             Cipher cipher = Cipher.getInstance(ALGORITHM);
             // 初始化解密信息
-            cipher.init(Cipher.DECRYPT_MODE,key);
+            cipher.init(Cipher.DECRYPT_MODE, key);
             // 解密
             byte[] doFinal = cipher.doFinal(bytes);
             // 返回解密之后的信息
-            return new String(doFinal,CHARSETNAME);
+            return new String(doFinal, CHARSETNAME);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -9,7 +9,9 @@ import redis.clients.jedis.JedisPoolConfig;
  * @Date 2019/1/24 9:47
  */
 public class JedisPoolWriper {
-    /** Redis连接池对象 */
+    /**
+     * Redis连接池对象
+     */
     private JedisPool jedisPool;
 
     public JedisPoolWriper(final JedisPoolConfig poolConfig, final String host, final int port) {

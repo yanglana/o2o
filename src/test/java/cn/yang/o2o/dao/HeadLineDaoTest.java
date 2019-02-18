@@ -23,7 +23,7 @@ public class HeadLineDaoTest extends BaseTest {
     private HeadLineDao headLineDao;
 
     @Test
-    public void testAInsertHeadLine(){
+    public void testAInsertHeadLine() {
         HeadLine headLine = new HeadLine();
         headLine.setLineName("头条二");
         headLine.setLineLink("test");
@@ -32,14 +32,14 @@ public class HeadLineDaoTest extends BaseTest {
         headLine.setPriority(2);
         headLine.setCreateTime(new Date());
         int effectedNum = headLineDao.insertHeadLine(headLine);
-        assertEquals(1,effectedNum);
+        assertEquals(1, effectedNum);
     }
 
     @Test
-    public void testBQueryHeadLine(){
+    public void testBQueryHeadLine() {
         HeadLine headLineCondition = new HeadLine();
         headLineCondition.setEnableStatus(0);
         List<HeadLine> headLineList = headLineDao.queryHeadLine(headLineCondition);
-        assertEquals(1,headLineList.size());
+        assertEquals(1, headLineList.size());
     }
 }

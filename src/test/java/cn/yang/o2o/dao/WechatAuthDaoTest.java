@@ -23,7 +23,7 @@ public class WechatAuthDaoTest extends BaseTest {
     private WechatAuthDao wechatAuthDao;
 
     @Test
-    public void testAInsertWechatAuth(){
+    public void testAInsertWechatAuth() {
         // 新增一条微信帐号
         WechatAuth wechatAuth = new WechatAuth();
         PersonInfo personInfo = new PersonInfo();
@@ -34,12 +34,12 @@ public class WechatAuthDaoTest extends BaseTest {
         wechatAuth.setOpenId("dfkalfajfda");
         wechatAuth.setCreateTime(new Date());
         int effectedNum = wechatAuthDao.insertWechatAuth(wechatAuth);
-        assertEquals(1,effectedNum);
+        assertEquals(1, effectedNum);
     }
 
     @Test
-    public void testBQueryWechatAuthByOpenId(){
+    public void testBQueryWechatAuthByOpenId() {
         WechatAuth wechatAuth = wechatAuthDao.queryWechatInfoByOpenId("dfkalfajfda");
-        assertEquals("测试",wechatAuth.getPersonInfo().getName());
+        assertEquals("测试", wechatAuth.getPersonInfo().getName());
     }
 }

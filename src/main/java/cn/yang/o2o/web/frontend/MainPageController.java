@@ -35,14 +35,14 @@ public class MainPageController {
      */
     @RequestMapping(value = "/listmainpageinfo", method = RequestMethod.GET)
     @ResponseBody
-    private Map<String, Object> listMainPageInfo(){
+    private Map<String, Object> listMainPageInfo() {
         Map<String, Object> modelMap = new HashMap<String, Object>();
 
         List<ShopCategory> shopCategoryList = new ArrayList<ShopCategory>();
         try {
             // 获取一级店铺类别列表(即parentId为空的ShopCategory)
             shopCategoryList = shopCategoryService.getShopCategoryList(null);
-            modelMap.put("shopCategoryList",shopCategoryList);
+            modelMap.put("shopCategoryList", shopCategoryList);
         } catch (Exception e) {
             modelMap.put("success", false);
             modelMap.put("errMsg", e.getMessage());
@@ -55,13 +55,13 @@ public class MainPageController {
             HeadLine headLineCondition = new HeadLine();
             headLineCondition.setEnableStatus(1);
             headLineList = headLineService.getHeadLineList(headLineCondition);
-            modelMap.put("headLineList",headLineList);
+            modelMap.put("headLineList", headLineList);
         } catch (Exception e) {
             modelMap.put("success", false);
             modelMap.put("errMsg", e.getMessage());
             return modelMap;
         }
-        modelMap.put("success",true);
+        modelMap.put("success", true);
         return modelMap;
     }
 }

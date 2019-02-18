@@ -31,22 +31,22 @@ public class ShopExecution {
 
     // 店铺操作失败的时候使用的构造器
     public ShopExecution(ShopStateEnum stateEnum) {
-        this.state=stateEnum.getState();
-        this.stateInfo=stateEnum.getStateInfo();
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
     }
 
     // 店铺操作成功的时候使用的构造器
     public ShopExecution(ShopStateEnum stateEnum, Shop shop) {
-        this.state=stateEnum.getState();
-        this.stateInfo=stateEnum.getStateInfo();
-        this.shop=shop;
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
+        this.shop = shop;
     }
 
     // 店铺操作成功的时候使用的构造器
-    public ShopExecution(ShopStateEnum stateEnum,List<Shop> shopList) {
-        this.state=stateEnum.getState();
-        this.stateInfo=stateEnum.getStateInfo();
-        this.shopList=shopList;
+    public ShopExecution(ShopStateEnum stateEnum, List<Shop> shopList) {
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
+        this.shopList = shopList;
     }
 
     public int getState() {

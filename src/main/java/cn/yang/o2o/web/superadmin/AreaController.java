@@ -28,7 +28,7 @@ public class AreaController {
 
     Logger logger = LoggerFactory.getLogger(AreaController.class);
 
-    @RequestMapping(value = "/listarea",method = RequestMethod.GET)
+    @RequestMapping(value = "/listarea", method = RequestMethod.GET)
     @ResponseBody/*返回体标志，页面结果格式为json*/
     private Map<String, Object> listArea() {
 
@@ -48,7 +48,7 @@ public class AreaController {
         }
         logger.error("test error!");
         long endTime = System.currentTimeMillis();
-        logger.debug("costTimes:[{}ms]",endTime-startTime);
+        logger.debug("costTimes:[{}ms]", endTime - startTime);
         logger.info("=====end=====");
         return modelMap;
     }

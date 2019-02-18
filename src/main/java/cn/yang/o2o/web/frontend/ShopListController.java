@@ -116,8 +116,8 @@ public class ShopListController {
             modelMap.put("count", se.getCount());
             modelMap.put("success", true);
         } else {
-            modelMap.put("success",false);
-            modelMap.put("errMsg","empty pageSize or pageIndex");
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "empty pageSize or pageIndex");
         }
         return modelMap;
     }

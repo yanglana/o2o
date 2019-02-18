@@ -23,7 +23,7 @@ public class PersonInfoDaoTest extends BaseTest {
     private PersonInfoDao personInfoDao;
 
     @Test
-    public void testAInsertPersonInfo(){
+    public void testAInsertPersonInfo() {
         PersonInfo personInfo = new PersonInfo();
         personInfo.setName("王老吉");
         personInfo.setGender("男");
@@ -32,11 +32,11 @@ public class PersonInfoDaoTest extends BaseTest {
         personInfo.setLastEditTime(new Date());
         personInfo.setEnableStatus(1);
         int effectedNum = personInfoDao.insertPersonInfo(personInfo);
-        assertEquals(1,effectedNum);
+        assertEquals(1, effectedNum);
     }
 
     @Test
-    public void testBQueryPersonInfoById(){
+    public void testBQueryPersonInfoById() {
         long userId = 1;
         // 查询Id为1的用户信息
         PersonInfo personInfo = personInfoDao.queryPersonInfoById(userId);

@@ -45,26 +45,26 @@ public class ProductManagement {
 
     @RequestMapping(value = "/getproductlistbyshop", method = RequestMethod.GET)
     @ResponseBody
-    private Map<String,Object> getProductListByShop(HttpServletRequest request){
-        Map<String,Object> modelMap = new HashMap<String, Object>();
+    private Map<String, Object> getProductListByShop(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
         // 获取前台传过来的页码
-        int pageIndex = HttpServletRequestUtil.getInt(request,"pageIndex");
+        int pageIndex = HttpServletRequestUtil.getInt(request, "pageIndex");
         // 获取前台传过来的每页要求返回的商品数上限
-        int pageSize = HttpServletRequestUtil.getInt(request,"pageSize");
+        int pageSize = HttpServletRequestUtil.getInt(request, "pageSize");
         // 从当前session中获取店铺信息，主要是获取shopId
         Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
         // 空值判断
         if (pageIndex > -1 && pageSize > -1 && currentShop != null && currentShop.getShopId() != null) {
             // 获取传入的需要检索的条件，包括是否需要从某个商品类别以及模糊查找商品名去筛选某个店铺下的商品列表
             // 筛选的条件可以进行排列组合
-            long productCategoryId = HttpServletRequestUtil.getLong(request,"productCategoryId");
-            String productName = HttpServletRequestUtil.getString(request,"productName");
-            Product productCondition = compactProductCondition(currentShop.getShopId(),productCategoryId,productName);
+            long productCategoryId = HttpServletRequestUtil.getLong(request, "productCategoryId");
+            String productName = HttpServletRequestUtil.getString(request, "productName");
+            Product productCondition = compactProductCondition(currentShop.getShopId(), productCategoryId, productName);
             // 传入查询条件以及分页信息进行查询，返回相应商品列表以及总数
-            ProductExecution pe = productService.getProductList(productCondition,pageIndex,pageSize);
-            modelMap.put("productList",pe.getProductList());
-            modelMap.put("count",pe.getCount());
-            modelMap.put("success",true);
+            ProductExecution pe = productService.getProductList(productCondition, pageIndex, pageSize);
+            modelMap.put("productList", pe.getProductList());
+            modelMap.put("count", pe.getCount());
+            modelMap.put("success", true);
         } else {
             modelMap.put("success", false);
             modelMap.put("errMsg", "empty pageSize or pageIndex or shopId");
@@ -91,16 +91,16 @@ public class ProductManagement {
             modelMap.put("productCategoryList", productCategoryList);
             modelMap.put("success", true);
         } else {
-            modelMap.put("success",false);
-            modelMap.put("errMsg","empty productId");
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "empty productId");
         }
         return modelMap;
     }
 
     @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
     @ResponseBody
-    private Map<String, Object> addProduct(HttpServletRequest request){
-        Map<String,Object> modelMap = new HashMap<String, Object>();
+    private Map<String, Object> addProduct(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
         // 验证码校验
         if (!CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
@@ -128,9 +128,9 @@ public class ProductManagement {
             return modelMap;
         }
         try {
-            String productStr = HttpServletRequestUtil.getString(request,"productStr");
+            String productStr = HttpServletRequestUtil.getString(request, "productStr");
             // 尝试获取前端传过来的表单string流并将其转换成Product实体类
-            product = mapper.readValue(productStr,Product.class);
+            product = mapper.readValue(productStr, Product.class);
         } catch (Exception e) {
             modelMap.put("success", false);
             modelMap.put("errMsg", e.toString());
@@ -161,19 +161,20 @@ public class ProductManagement {
         }
         return modelMap;
     }
+
     private ImageHolder handleImage(HttpServletRequest request, ImageHolder thumbnail, List<ImageHolder> productImgList) throws IOException {
         MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
         // 取出缩略图并构建ImageHolder对象
         CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartHttpServletRequest.getFile("thumbnail");
         if (thumbnailFile != null) {
-            thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(),thumbnailFile.getInputStream());
+            thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
         }
         // 取出详情图列表并构建List<ImageHolder>列表对象，最多支持六张图片上传
         for (int i = 0; i < IMAGEMAXCOUNT; i++) {
             CommonsMultipartFile productImgFile = (CommonsMultipartFile) multipartHttpServletRequest.getFile("productImg" + i);
             if (productImgFile != null) {
                 // 若取出的第i个详情图片文件流不为空，则将其加入详情图列表
-                ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(),productImgFile.getInputStream());
+                ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(), productImgFile.getInputStream());
                 productImgList.add(productImg);
             } else {
                 // 若取出的第i个详情图片文件流为空，则终止循环
@@ -190,15 +191,15 @@ public class ProductManagement {
      */
     @RequestMapping(value = "/modifyproduct", method = RequestMethod.POST)
     @ResponseBody
-    private Map<String, Object> modifyProduct(HttpServletRequest request){
-        Map<String,Object> modelMap = new HashMap<String, Object>();
+    private Map<String, Object> modifyProduct(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
         // 是商品编辑时候调用还是上下架操作的时候调用
         // 若为前者则进行验证码判断，后者则跳过验证码判断
-        boolean statusChange = HttpServletRequestUtil.getBoolean(request,"statusChange");
+        boolean statusChange = HttpServletRequestUtil.getBoolean(request, "statusChange");
         // 验证码判断
         if (!statusChange && !CodeUtil.checkVerifyCode(request)) {
-            modelMap.put("success",false);
-            modelMap.put("errMsg","输入了错误的验证码");
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "输入了错误的验证码");
             return modelMap;
         }
         // 接收前端参数的变量的初始化，包括商品，缩略图，详情图列表实体类
@@ -210,7 +211,7 @@ public class ProductManagement {
         // 若请求中存在文件流，则取出相关的文件（包括缩略图和详情图）
         try {
             if (commonsMultipartResolver.isMultipart(request)) {
-                thumbnail = handleImage(request,thumbnail,productImgList);
+                thumbnail = handleImage(request, thumbnail, productImgList);
             }
         } catch (IOException e) {
             modelMap.put("success", false);
@@ -218,9 +219,9 @@ public class ProductManagement {
             return modelMap;
         }
         try {
-            String productStr = HttpServletRequestUtil.getString(request,"productStr");
+            String productStr = HttpServletRequestUtil.getString(request, "productStr");
             // 尝试获取前端传过来的表单string流并将其转换成Product实体类
-            product = mapper.readValue(productStr,Product.class);
+            product = mapper.readValue(productStr, Product.class);
         } catch (IOException e) {
             modelMap.put("success", false);
             modelMap.put("errMsg", e.toString());

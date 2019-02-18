@@ -30,7 +30,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Override
     @Transactional
     public ProductCategoryExecution batchAddProductCategory(List<ProductCategory> productCategoryList) throws ProductCategoryOperationException {
-        if (productCategoryList != null && productCategoryList.size()>0){
+        if (productCategoryList != null && productCategoryList.size() > 0) {
             try {
                 int effectedNum = productCategoryDao.batchInsertProductCategory(productCategoryList);
                 if (effectedNum <= 0) {
@@ -53,7 +53,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
         // 删除该productCategory
         try {
-            int effectedNum = productCategoryDao.deleteProductCategory(productCategoryId,shopId);
+            int effectedNum = productCategoryDao.deleteProductCategory(productCategoryId, shopId);
             if (effectedNum <= 0) {
                 throw new ProductCategoryOperationException("商品类别删除失败");
             } else {

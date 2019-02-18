@@ -24,7 +24,7 @@ public class WechatAuthServiceTest extends BaseTest {
     private WechatAuthService wechatAuthService;
 
     @Test
-    public void testRegister(){
+    public void testRegister() {
         // 新增一条微信帐号
         WechatAuth wechatAuth = new WechatAuth();
         PersonInfo personInfo = new PersonInfo();
@@ -38,7 +38,7 @@ public class WechatAuthServiceTest extends BaseTest {
         wechatAuth.setOpenId(openId);
         wechatAuth.setCreateTime(new Date());
         WechatAuthExecution wae = wechatAuthService.register(wechatAuth);
-        assertEquals(WechatAuthStateEnum.SUCCESS.getState(),wae.getState());
+        assertEquals(WechatAuthStateEnum.SUCCESS.getState(), wae.getState());
         // 通过openId找到新增的wechatAuth
         wechatAuth = wechatAuthService.getWechatAuthByOpenId(openId);
         // 打印用户名字看看跟预期是否相符

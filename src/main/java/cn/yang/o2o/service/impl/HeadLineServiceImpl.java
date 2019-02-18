@@ -74,7 +74,7 @@ public class HeadLineServiceImpl implements HeadLineService {
             JavaType javaType = mapper.getTypeFactory().constructParametricType(ArrayList.class, HeadLine.class);
             try {
                 // 将相关key对应的value里的的string转换成对象的实体类集合
-                headLineList = mapper.readValue(jsonString,javaType);
+                headLineList = mapper.readValue(jsonString, javaType);
             } catch (IOException e) {
                 e.printStackTrace();
                 logger.error(e.getMessage());
@@ -111,9 +111,9 @@ public class HeadLineServiceImpl implements HeadLineService {
 
     private void addImage(HeadLine headLine, ImageHolder thumbnail) {
         String dest = PathUtil.getHeadLineImagePath();
-        String thumbnailAddr = ImageUtil.generateNormalImg(thumbnail,dest);
+        String thumbnailAddr = ImageUtil.generateNormalImg(thumbnail, dest);
         headLine.setLineImg(thumbnailAddr);
-        String path = "http://localhost:8080"+thumbnailAddr;
+        String path = "http://localhost:8080" + thumbnailAddr;
         path = PathUtil.transferToLink(path);
         headLine.setLineLink(path);
     }

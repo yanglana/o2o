@@ -51,19 +51,19 @@ public class ProductServiceTest extends BaseTest {
         // 创建缩略图文件流
         File thumbnailFile = new File("E:/image/xiaohuangren.jpg");
         InputStream is = new FileInputStream(thumbnailFile);
-        ImageHolder thumbnail = new ImageHolder(thumbnailFile.getName(),is);
+        ImageHolder thumbnail = new ImageHolder(thumbnailFile.getName(), is);
         // 创建两个商品详情图文件流并将他们添加到详情图列表中
         File productImg1 = new File("E:/image/xiaohuangren.jpg");
         InputStream is1 = new FileInputStream(productImg1);
         File productImg2 = new File("E:/image/dabai.jpg");
         InputStream is2 = new FileInputStream(productImg2);
         List<ImageHolder> productImgList = new ArrayList<ImageHolder>();
-        productImgList.add(new ImageHolder(productImg1.getName(),is1));
-        productImgList.add(new ImageHolder(productImg2.getName(),is2));
+        productImgList.add(new ImageHolder(productImg1.getName(), is1));
+        productImgList.add(new ImageHolder(productImg2.getName(), is2));
         // 添加商品并验证
-        ProductExecution pe = productService.addProduct(product,thumbnail,productImgList);
+        ProductExecution pe = productService.addProduct(product, thumbnail, productImgList);
         System.out.println(pe.getState());
-        assertEquals(ProductStateEnum.SUCCESS.getState(),pe.getState());
+        assertEquals(ProductStateEnum.SUCCESS.getState(), pe.getState());
     }
 
     @Test
@@ -82,17 +82,17 @@ public class ProductServiceTest extends BaseTest {
         // 创建缩略图文件流
         File thumbnailFile = new File("E:/image/test.png");
         InputStream is = new FileInputStream(thumbnailFile);
-        ImageHolder thumbnail = new ImageHolder(thumbnailFile.getName(),is);
+        ImageHolder thumbnail = new ImageHolder(thumbnailFile.getName(), is);
         // 创建两个商品详情图文件流并将他们添加到详情图列表中
         File productImg1 = new File("C:/Users/Administrator/Desktop/新建文件夹/h1.png");
         InputStream is1 = new FileInputStream(productImg1);
         File productImg2 = new File("C:/Users/Administrator/Desktop/新建文件夹/h2.png");
         InputStream is2 = new FileInputStream(productImg2);
         List<ImageHolder> productImgList = new ArrayList<ImageHolder>();
-        productImgList.add(new ImageHolder(productImg1.getName(),is1));
-        productImgList.add(new ImageHolder(productImg2.getName(),is2));
+        productImgList.add(new ImageHolder(productImg1.getName(), is1));
+        productImgList.add(new ImageHolder(productImg2.getName(), is2));
         // 添加商品并验证
-        ProductExecution pe = productService.modifyProduct(product,thumbnail,productImgList);
-        assertEquals(ProductStateEnum.SUCCESS.getState(),pe.getState());
+        ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
+        assertEquals(ProductStateEnum.SUCCESS.getState(), pe.getState());
     }
 }

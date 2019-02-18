@@ -36,8 +36,8 @@ $(function () {
                 // 遍历商品列表，生成可以点击搜索相应商品类别下的商品的a标签
                 productCategoryList.map(function (index, domElement) {
                     html += '<a href="#" class="button" data-product-search-id="' + index.productCategoryId + '">'
-                                + index.productCategoryName +
-                            '</a>';
+                        + index.productCategoryName +
+                        '</a>';
                 });
                 // 将商品类别a标签绑定到相应的HTML组件中
                 $('#shopdetail-button-div').html(html);
@@ -50,39 +50,39 @@ $(function () {
      */
     function addItems(pageSize, pageIndex) {
         var url = listUrl + "?pageIndex=" + pageIndex + "&pageSize=" + pageSize
-                    + "&productCategoryId=" + productCategoryId + "&productName=" + productName
-                    + "&shopId=" + shopId;
+            + "&productCategoryId=" + productCategoryId + "&productName=" + productName
+            + "&shopId=" + shopId;
         // 设定加载符，若还在后台取数据则不能再次访问后台，避免多次重复加载
         loading = true;
         // 访问后台获取相应查询条件下的商品列表
-        $.getJSON(url,function (data) {
+        $.getJSON(url, function (data) {
             if (data.success) {
                 // 获取当前查询条件下商品的总数
                 maxItems = data.count;
                 var html = '';
                 // 遍历商品列表，拼接出卡片集合
                 data.productList.map(function (index, domElement) {
-                   html += '<div class="card" data-product-id="'+index.productId+'">' +
-                               '<div class="card-header">'+index.productName+'</div>' +
-                               '<div class="card-content">' +
-                                   '<div class="list-block media-list">' +
-                                       '<ul>' +
-                                           '<li class="item-content">' +
-                                               '<div class="item-media">' +
-                                                   '<img src="'+index.imgAddr+'" width="44">' +
-                                               '</div>' +
-                                               '<div class="item-inner">' +
-                                                    '<div class="item-subtitle">'+index.productDesc+'</div>' +
-                                               '</div>' +
-                                           '</li>' +
-                                       '</ul>' +
-                                   '</div>' +
-                               '</div>' +
-                               '<div class="card-footer">' +
-                                   '<p>'+new Date(index.lastEditTime).Format("yyyy-MM-dd")+'更新</p>' +
-                                   '<span>点击查看</span>' +
-                               '</div>' +
-                           '</div>';
+                    html += '<div class="card" data-product-id="' + index.productId + '">' +
+                        '<div class="card-header">' + index.productName + '</div>' +
+                        '<div class="card-content">' +
+                        '<div class="list-block media-list">' +
+                        '<ul>' +
+                        '<li class="item-content">' +
+                        '<div class="item-media">' +
+                        '<img src="' + index.imgAddr + '" width="44">' +
+                        '</div>' +
+                        '<div class="item-inner">' +
+                        '<div class="item-subtitle">' + index.productDesc + '</div>' +
+                        '</div>' +
+                        '</li>' +
+                        '</ul>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="card-footer">' +
+                        '<p>' + new Date(index.lastEditTime).Format("yyyy-MM-dd") + '更新</p>' +
+                        '<span>点击查看</span>' +
+                        '</div>' +
+                        '</div>';
                 });
                 // 将卡片集合添加到目标HTML组件里
                 $('.list-div').append(html);
@@ -106,14 +106,14 @@ $(function () {
     }
 
     // 下滑屏幕自动进行分页搜索
-    $(document).on('infinite','.infinite-scroll-bottom',function () {
+    $(document).on('infinite', '.infinite-scroll-bottom', function () {
         if (loading)
             return;
-        addItems(pageSize,pageNum);
+        addItems(pageSize, pageNum);
     });
 
     // 选择新的商品类别之后，重置页码，清空原先的商品列表，按照新的类别去查询
-    $('#shopdetail-button-div').on('click','.button', function (e) {
+    $('#shopdetail-button-div').on('click', '.button', function (e) {
         // 获取商品类别Id
         productCategoryId = e.target.dataset.productSearchId;
         if (productCategoryId) {
@@ -126,22 +126,22 @@ $(function () {
             }
             $('.list-div').empty();
             pageNum = 1;
-            addItems(pageSize,pageNum);
+            addItems(pageSize, pageNum);
         }
     });
 
     // 点击商品的 卡片进入该商品的详情页
-    $('.list-div').on('click','.card',function (e) {
+    $('.list-div').on('click', '.card', function (e) {
         var productId = e.currentTarget.dataset.productId;
-        window.location.href = '/frontend/productdetail?productId='+productId;
+        window.location.href = '/frontend/productdetail?productId=' + productId;
     });
 
     // 需要查询的商品名字发生变化后，重置页码，清空原先的商品列表，按照新的名字去查询
-    $('#search').on('change',function (e) {
+    $('#search').on('change', function (e) {
         productName = e.target.value;
         $('.list-div').empty();
         pageNum = 1;
-        addItems(pageSize,pageNum);
+        addItems(pageSize, pageNum);
     });
 
     // 点击后打开右侧栏

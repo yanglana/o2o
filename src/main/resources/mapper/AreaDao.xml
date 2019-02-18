@@ -5,7 +5,7 @@
 <mapper namespace="cn.yang.o2o.dao.AreaDao">
     <select id="queryArea" resultType="cn.yang.o2o.entity.Area">
         select area_id, area_name, priority, create_time, last_edit_time
-              from tb_area
-              order by priority desc
+        from tb_area
+        order by priority desc
     </select>
 </mapper>

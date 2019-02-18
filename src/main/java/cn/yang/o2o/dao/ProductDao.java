@@ -28,21 +28,21 @@ public interface ProductDao {
      * @Return cn.yang.o2o.entity.Product
      */
     Product queryProductById(long productId);
-    
+
     /*
      * @Description 插入商品
      * @Param [product]
      * @Return int
      */
     int insertProduct(Product product);
-    
+
     /*
      * @Description 更新商品信息
      * @Param [product]
      * @Return int
      */
     int updateProduct(Product product);
-    
+
     /*
      * @Description 删除商品类别之前，将商品类别ID置为空
      * @Param [productCategoryId]

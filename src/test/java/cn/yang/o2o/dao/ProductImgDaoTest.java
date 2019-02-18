@@ -25,7 +25,7 @@ public class ProductImgDaoTest extends BaseTest {
     private ProductImgDao productImgDao;
 
     @Test
-    public void testAInsertProductImg(){
+    public void testAInsertProductImg() {
         List<ProductImg> productImgList = new ArrayList<ProductImg>();
         ProductImg productImg1 = new ProductImg();
         productImg1.setImgAddr("test1");
@@ -49,6 +49,6 @@ public class ProductImgDaoTest extends BaseTest {
         productImgList.add(productImg2);
         productImgList.add(productImg3);
         int effectedNum = productImgDao.batchInsertProductImg(productImgList);
-        assertEquals(3,effectedNum);
+        assertEquals(3, effectedNum);
     }
 }

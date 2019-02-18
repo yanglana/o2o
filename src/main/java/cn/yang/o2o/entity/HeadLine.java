@@ -1,6 +1,7 @@
 package cn.yang.o2o.entity;
 
 import java.util.Date;
+
 /**
  * @Description 头条实体类
  * @Author yanglan

@@ -1,6 +1,6 @@
 package cn.yang.o2o.enums;
 
-public enum  WechatAuthStateEnum {
+public enum WechatAuthStateEnum {
     LOGINFAIL(-1, "openId输入有误"), SUCCESS(0, "操作成功"),
     NULL_AUTH_INFO(-1006, "注册信息为空");
 

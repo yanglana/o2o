@@ -25,23 +25,25 @@
     <select id="queryLocalByUserNameAndPwd" resultMap="localAuthResultMap"
             parameterType="String">
         select l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time,
-               p.user_id, p.name, p.gender, p.email, p.profile_img, p.user_type, p.create_time, p.last_edit_time, p.enable_status
+        p.user_id, p.name, p.gender, p.email, p.profile_img, p.user_type, p.create_time, p.last_edit_time,
+        p.enable_status
         from tb_local_auth l
-                 left join
-                     tb_person_info p on l.user_id = p.user_id
+        left join
+        tb_person_info p on l.user_id = p.user_id
         where
-                l.username = #{username} and l.password = #{password}
+        l.username = #{username} and l.password = #{password}
     </select>
 
     <select id="queryLocalByUserId" resultMap="localAuthResultMap"
             parameterType="Long">
         select l.local_auth_id, l.username, l.password, l.create_time, l.last_edit_time,
-               p.user_id, p.name, p.gender, p.email, p.profile_img, p.user_type, p.create_time, p.last_edit_time, p.enable_status
+        p.user_id, p.name, p.gender, p.email, p.profile_img, p.user_type, p.create_time, p.last_edit_time,
+        p.enable_status
         from tb_local_auth l
-                 left join
-                     tb_person_info p on l.user_id = p.user_id
+        left join
+        tb_person_info p on l.user_id = p.user_id
         where
-            l.user_id = #{userId}
+        l.user_id = #{userId}
     </select>
 
     <insert id="insertLocalAuth" parameterType="cn.yang.o2o.entity.LocalAuth"

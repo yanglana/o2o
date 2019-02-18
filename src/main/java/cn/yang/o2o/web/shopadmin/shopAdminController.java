@@ -32,7 +32,7 @@ public class shopAdminController {
     }
 
     @RequestMapping(value = "/productcategorymanagement", method = RequestMethod.GET)
-    public String productCategoryManagement(){
+    public String productCategoryManagement() {
         // 转发至商品类别管理页面
         return "shop/productcategorymanagement";
     }

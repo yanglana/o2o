@@ -12,7 +12,7 @@ import java.io.PrintWriter;
  * @Author yanglan
  * @Date 2019/2/14 11:22
  */
-public class ShopLoginInterceptor extends HandlerInterceptorAdapter{
+public class ShopLoginInterceptor extends HandlerInterceptorAdapter {
 
     /*
      * @Description 主要做事前拦截，即用户操作发生前，改写preHandle里的逻辑，进行拦截
@@ -36,7 +36,7 @@ public class ShopLoginInterceptor extends HandlerInterceptorAdapter{
         PrintWriter out = response.getWriter();
         out.println("<html>");
         out.println("<script>");
-        out.println("window.open('"+request.getContextPath()+"/local/login?usertype=2','_self')");
+        out.println("window.open('" + request.getContextPath() + "/local/login?usertype=2','_self')");
         out.println("</script>");
         out.println("</html>");
         return false;

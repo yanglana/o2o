@@ -20,7 +20,7 @@ public class EncryptPropertyPlaceholderConfigurer extends PropertyPlaceholderCon
     protected String convertProperty(String propertyName, String propertyValue) {
         if (isEncryptProp(propertyName)) {
             // 对已加密的字段进行解密工作
-            String decryptValue = DESUtil.getDncryptString(propertyValue);
+            String decryptValue = DESUtil.getDecryptString(propertyValue);
             return decryptValue;
         } else {
             return propertyValue;

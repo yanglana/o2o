@@ -15,14 +15,14 @@ public interface ProductService {
      * @Return cn.yang.o2o.dto.ProductExecution
      */
     ProductExecution getProductList(Product productCondition, int pageIndex, int pageSize) throws ProductOperationException;
-   
+
     /*
      * @Description 通过商品Id查询唯一的商品信息
      * @Param [product]
      * @Return cn.yang.o2o.dto.ProductExecution
      */
     Product getProductById(long productId) throws ProductOperationException;
-    
+
     /*
      * @Description 添加商品信息以及图片处理
      * @Param [product, imageHolder, productImgList]

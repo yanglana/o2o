@@ -65,7 +65,7 @@ public class AreaServiceImpl implements AreaService {
             JavaType javaType = mapper.getTypeFactory().constructParametricType(ArrayList.class, Area.class);
             try {
                 // 将相关key对应的value里的的string转换成对象的实体类集合
-                areaList = mapper.readValue(jsonString,javaType);
+                areaList = mapper.readValue(jsonString, javaType);
             } catch (IOException e) {
                 e.printStackTrace();
                 logger.error(e.getMessage());

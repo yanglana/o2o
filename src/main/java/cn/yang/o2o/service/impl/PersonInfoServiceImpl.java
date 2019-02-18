@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PersonInfoServiceImpl implements PersonInfoService {
-   @Autowired
-   private PersonInfoDao personInfoDao;
+    @Autowired
+    private PersonInfoDao personInfoDao;
 
     @Override
     public PersonInfo getPersonInfoById(Long userId) {

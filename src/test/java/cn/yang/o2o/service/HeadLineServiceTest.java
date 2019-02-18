@@ -37,7 +37,7 @@ public class HeadLineServiceTest extends BaseTest {
     }
 
     @Test
-    public void testGetHeadLineList(){
+    public void testGetHeadLineList() {
         List<HeadLine> headLineList = headLineService.getHeadLineList(new HeadLine());
         System.out.println(headLineList.get(0).getLineName());
         HeadLine headLineCondition = new HeadLine();

@@ -7,7 +7,7 @@ import cn.yang.o2o.exceptions.ProductCategoryOperationException;
 import java.util.List;
 
 public interface ProductCategoryService {
-    
+
     /*
      * @Description 查询指定某个店铺下的所有商品类别信息
      * @Param [shopId]

@@ -44,7 +44,7 @@ public class ShopDetailController {
     private Map<String, Object> listShopDetailPageInfo(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<String, Object>();
         // 获取前台传过来的shopId
-        long shopId = HttpServletRequestUtil.getLong(request,"shopId");
+        long shopId = HttpServletRequestUtil.getLong(request, "shopId");
         Shop shop = null;
         List<ProductCategory> productCategoryList = null;
         if (shopId != -1) {
@@ -56,9 +56,9 @@ public class ShopDetailController {
             modelMap.put("productCategoryList", productCategoryList);
             modelMap.put("success", true);
         } else {
-            modelMap.put("success",false);
-            modelMap.put("errMsg","empty shopId");
-        } 
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "empty shopId");
+        }
         return modelMap;
     }
 

@@ -39,9 +39,10 @@ $(function () {
             return "审核通过";
         }
     }
+
     function goShop(status, id) {
         if (status == 1) {
-            return '<a href="/o2omaven/shopadmin/shopmanagement?shopId='+id+'">进入</a>';
+            return '<a href="/o2omaven/shopadmin/shopmanagement?shopId=' + id + '">进入</a>';
         } else {
             return "";
         }

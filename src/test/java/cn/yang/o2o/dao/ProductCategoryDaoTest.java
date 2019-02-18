@@ -25,14 +25,14 @@ public class ProductCategoryDaoTest extends BaseTest {
     private ProductCategoryDao productCategoryDao;
 
     @Test
-    public void testBQueryByShopId(){
+    public void testBQueryByShopId() {
         long shopId = 1;
         List<ProductCategory> productCategoryList = productCategoryDao.queryProductCategoryList(shopId);
-        System.out.println("该店铺自定义类别数为:"+productCategoryList.size());
+        System.out.println("该店铺自定义类别数为:" + productCategoryList.size());
     }
 
     @Test
-    public void testABatchInsertProductCategory(){
+    public void testABatchInsertProductCategory() {
         ProductCategory productCategory = new ProductCategory();
         productCategory.setProductCategoryName("商品类别1");
         productCategory.setPriority(1);
@@ -47,17 +47,17 @@ public class ProductCategoryDaoTest extends BaseTest {
         productCategoryList.add(productCategory);
         productCategoryList.add(productCategory2);
         int effectedNum = productCategoryDao.batchInsertProductCategory(productCategoryList);
-        assertEquals(2,effectedNum);
+        assertEquals(2, effectedNum);
     }
 
     @Test
-    public void testCDeleteProductCategory(){
+    public void testCDeleteProductCategory() {
         long shopId = 1L;
         List<ProductCategory> productCategoryList = productCategoryDao.queryProductCategoryList(shopId);
         for (ProductCategory pc : productCategoryList) {
             if ("商品类别1".equals(pc.getProductCategoryName()) || "商品类别2".equals(pc.getProductCategoryName())) {
-                int effectedNum = productCategoryDao.deleteProductCategory(pc.getProductCategoryId(),pc.getShopId());
-                assertEquals(1,effectedNum);
+                int effectedNum = productCategoryDao.deleteProductCategory(pc.getProductCategoryId(), pc.getShopId());
+                assertEquals(1, effectedNum);
             }
         }
     }

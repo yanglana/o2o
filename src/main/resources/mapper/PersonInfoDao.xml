@@ -5,18 +5,18 @@
 <mapper namespace="cn.yang.o2o.dao.PersonInfoDao">
     <select id="queryPersonInfoById" resultType="cn.yang.o2o.entity.PersonInfo" parameterType="Long">
         select user_id, name, profile_img,
-               email, gender, enable_status,
-               user_type, create_time, last_edit_time
-              from tb_person_info
-              where user_id = #{userId}
+        email, gender, enable_status,
+        user_type, create_time, last_edit_time
+        from tb_person_info
+        where user_id = #{userId}
     </select>
 
     <insert id="insertPersonInfo" parameterType="cn.yang.o2o.entity.PersonInfo"
             useGeneratedKeys="true" keyColumn="user_id" keyProperty="userId">
         insert into tb_person_info(name, profile_img,
-                                   email, gender, enable_status,
-                                   user_type, create_time, last_edit_time)
+        email, gender, enable_status,
+        user_type, create_time, last_edit_time)
         values (#{name},#{profileImg},#{email},#{gender},
-                #{enableStatus},#{userType},#{createTime},#{lastEditTime})
+        #{enableStatus},#{userType},#{createTime},#{lastEditTime})
     </insert>
 </mapper>

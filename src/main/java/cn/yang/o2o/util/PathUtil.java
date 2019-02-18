@@ -12,20 +12,21 @@ public class PathUtil {
 
     private static Logger logger = LoggerFactory.getLogger(PathUtil.class);
     private static String separator = System.getProperty("file.separator");
+
     /*
      * @Description 获取不同系统的图片存储基路径
      * @Param []
      * @Return java.lang.String
-     */        
-    public static String getImgBasePath(){
-        String os=System.getProperty("os.name");
+     */
+    public static String getImgBasePath() {
+        String os = System.getProperty("os.name");
         String basePath = "";
         if (os.toLowerCase().startsWith("win")) {
             basePath = "E:/image";
         } else {
-            basePath="/home/yanglan/projectSrc/image";
+            basePath = "/home/yanglan/projectSrc/image";
         }
-        basePath = basePath.replace("/",separator);
+        basePath = basePath.replace("/", separator);
         return basePath;
     }
 
@@ -34,23 +35,23 @@ public class PathUtil {
      * @Param
      * @Return
      */
-    public static String getShopImagePath(long shopId){
-        String imagePath = "/upload/images/item/shop/"+shopId+"/";
-        logger.debug("dest:"+imagePath);
-        return imagePath.replace("/",separator);
+    public static String getShopImagePath(long shopId) {
+        String imagePath = "/upload/images/item/shop/" + shopId + "/";
+        logger.debug("dest:" + imagePath);
+        return imagePath.replace("/", separator);
     }
 
-    public static String getShopCategoryImagePath(){
+    public static String getShopCategoryImagePath() {
         String imagePath = "/upload/images/item/shopcategory/";
-        return imagePath.replace("/",separator);
+        return imagePath.replace("/", separator);
     }
 
-    public static String getHeadLineImagePath(){
+    public static String getHeadLineImagePath() {
         String imagePath = "/upload/images/item/headtitle/";
-        return imagePath.replace("/",separator);
+        return imagePath.replace("/", separator);
     }
 
-    public static String transferToLink(String path){
-        return path.replace(separator,"/");
+    public static String transferToLink(String path) {
+        return path.replace(separator, "/");
     }
 }

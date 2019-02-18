@@ -35,8 +35,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductExecution getProductList(Product productCondition, int pageIndex, int pageSize) throws ProductOperationException {
         // 页码转换成数据库的行码，并调用dao层取回指定页码的商品列表
-        int rowIndex= PageCalculator.calculateRowIndex(pageIndex,pageSize);
-        List<Product> productList = productDao.queryProductList(productCondition,rowIndex,pageSize);
+        int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
+        List<Product> productList = productDao.queryProductList(productCondition, rowIndex, pageSize);
         // 基于同样的查询条件返回该查询条件下的商品总数
         int count = productDao.queryProductCount(productCondition);
         ProductExecution pe = new ProductExecution();
@@ -81,7 +81,7 @@ public class ProductServiceImpl implements ProductService {
             if (productImgList != null && productImgList.size() > 0) {
                 addProductImgList(product, productImgList);
             }
-            return new ProductExecution(ProductStateEnum.SUCCESS,product);
+            return new ProductExecution(ProductStateEnum.SUCCESS, product);
         } else {
             // 传参为空则返回空值错误信息
             return new ProductExecution(ProductStateEnum.EMPTY);

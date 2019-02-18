@@ -33,11 +33,11 @@ public class ShopServiceImpl implements ShopService {
     Logger logger = LoggerFactory.getLogger(ShopService.class);
 
     @Override
-    public ShopExecution getShopList(Shop shopCondition,int pageIndex,int pageSize) {
+    public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
         //将页码转换成行码
-        int rowIndex = PageCalculator.calculateRowIndex(pageIndex,pageSize);
+        int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
         //依据查询条件，调用dao层返回相关的店铺列表
-        List<Shop> shopList = shopDao.queryShopList(shopCondition,rowIndex,pageSize);
+        List<Shop> shopList = shopDao.queryShopList(shopCondition, rowIndex, pageSize);
         //依据相同的查询条件，返回店铺总数
         int count = shopDao.queryShopCount(shopCondition);
         ShopExecution se = new ShopExecution();
@@ -87,7 +87,7 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     @Transactional
-    public ShopExecution addShop(Shop shop,ImageHolder thumbnail) throws ShopOperationException{
+    public ShopExecution addShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException {
         //空值判断
         if (shop == null) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);
@@ -108,7 +108,7 @@ public class ShopServiceImpl implements ShopService {
                     logger.debug("shopImg2:" + thumbnail.getImage());
                     try {
                         // 存储图片
-                        addShopImg(shop,thumbnail);
+                        addShopImg(shop, thumbnail);
                         logger.debug("addShopImg");
                     } catch (Exception e) {
                         throw new ShopOperationException("addShopImg erro:" + e.getMessage());

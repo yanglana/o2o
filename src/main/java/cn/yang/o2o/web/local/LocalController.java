@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/local")
 public class LocalController {
-    
+
     /*
      * @Description 绑定帐号页路由
      * @Param []
      * @Return java.lang.String
      */
-    @RequestMapping(value = "/accountbind",method = {RequestMethod.GET})
-    private String accountbind(){
+    @RequestMapping(value = "/accountbind", method = {RequestMethod.GET})
+    private String accountbind() {
         return "local/accountbind";
     }
 
@@ -28,8 +28,8 @@ public class LocalController {
      * @Param []
      * @Return java.lang.String
      */
-    @RequestMapping(value = "/changepsw",method = {RequestMethod.GET})
-    private String changepsw(){
+    @RequestMapping(value = "/changepsw", method = {RequestMethod.GET})
+    private String changepsw() {
         return "local/changepsw";
     }
 
@@ -38,8 +38,8 @@ public class LocalController {
      * @Param []
      * @Return java.lang.String
      */
-    @RequestMapping(value = "/login",method = {RequestMethod.GET})
-    private String login(){
+    @RequestMapping(value = "/login", method = {RequestMethod.GET})
+    private String login() {
         return "local/login";
     }
 }

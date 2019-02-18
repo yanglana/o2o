@@ -4,6 +4,7 @@ package cn.yang.o2o.entity;
  * @Author yanglan
  * @Date 2018/11/22 15:26
  */
+
 import java.util.Date;
 
 public class Area {

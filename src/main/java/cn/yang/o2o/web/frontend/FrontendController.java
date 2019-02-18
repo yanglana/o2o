@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @Date 2018/12/29 11:10
  */
 @Controller
-@RequestMapping(value = "/frontend",method = {RequestMethod.GET})
+@RequestMapping(value = "/frontend", method = {RequestMethod.GET})
 public class FrontendController {
 
     /*
@@ -29,7 +29,7 @@ public class FrontendController {
      * @Return java.lang.String
      */
     @RequestMapping(value = "/shoplist")
-    private String showShopList(){
+    private String showShopList() {
         return "/frontend/shoplist";
     }
 
@@ -39,7 +39,7 @@ public class FrontendController {
      * @Return java.lang.String
      */
     @RequestMapping(value = "/shopdetail")
-    private String showShopDetail(){
+    private String showShopDetail() {
         return "/frontend/shopdetail";
     }
 
@@ -49,7 +49,7 @@ public class FrontendController {
      * @Return java.lang.String
      */
     @RequestMapping(value = "/productdetail")
-    private String showProductDetail(){
+    private String showProductDetail() {
         return "/frontend/productdetail";
     }
 }

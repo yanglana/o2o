@@ -25,7 +25,7 @@ public class LocalAuthServiceImpl implements LocalAuthService {
 
     @Override
     public LocalAuth getLocalAuthByUsernameAndPwd(String userName, String password) {
-        return localAuthDao.queryLocalByUserNameAndPwd(userName,MD5.getMd5(password));
+        return localAuthDao.queryLocalByUserNameAndPwd(userName, MD5.getMd5(password));
     }
 
     @Override
@@ -58,7 +58,7 @@ public class LocalAuthServiceImpl implements LocalAuthService {
             if (effectedNum <= 0) {
                 throw new LocalAuthOperationException("帐号绑定失败");
             } else {
-                return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS,localAuth);
+                return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS, localAuth);
             }
         } catch (Exception e) {
             throw new LocalAuthOperationException("insertLocalAuth error: " + e.getMessage());

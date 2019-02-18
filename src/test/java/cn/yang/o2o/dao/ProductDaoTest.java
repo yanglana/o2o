@@ -80,21 +80,21 @@ public class ProductDaoTest extends BaseTest {
     public void testBQueryProductList() {
         Product productCondition = new Product();
         // 分页查询，预期返回三条结果
-        List<Product> productList = productDao.queryProductList(productCondition,0,4);
-        assertEquals(4,productList.size());
+        List<Product> productList = productDao.queryProductList(productCondition, 0, 4);
+        assertEquals(4, productList.size());
         // 查询名称为测试的商品总数
-        int count  = productDao.queryProductCount(productCondition);
-        assertEquals(7,count);
+        int count = productDao.queryProductCount(productCondition);
+        assertEquals(7, count);
         // 使用商品名称模糊查询，预期返回两条结果
         productCondition.setProductName("测试");
-        productList = productDao.queryProductList(productCondition,0,3);
-        assertEquals(3,productList.size());
+        productList = productDao.queryProductList(productCondition, 0, 3);
+        assertEquals(3, productList.size());
         count = productDao.queryProductCount(productCondition);
-        assertEquals(5,count);
+        assertEquals(5, count);
     }
 
     @Test
-    public void testCQueryProductByProductId(){
+    public void testCQueryProductByProductId() {
         long productId = 13L;
         // 初始化两个商品详情图实例作为productId为1的商品下的详情图片
         // 批量插入到商品详情图表中
@@ -113,13 +113,13 @@ public class ProductDaoTest extends BaseTest {
         productImgList.add(productImg1);
         productImgList.add(productImg2);
         int effectedNum = productImgDao.batchInsertProductImg(productImgList);
-        assertEquals(2,effectedNum);
+        assertEquals(2, effectedNum);
         //查询productId为1的商品信息并校验返回的详情图实例列表size是否为2
         Product product = productDao.queryProductById(productId);
-        assertEquals(2,product.getProductImgList().size());
+        assertEquals(2, product.getProductImgList().size());
         // 删除新增的这两个商品详情图实例
         effectedNum = productImgDao.deleteProductImgByProductId(productId);
-        assertEquals(2,effectedNum);
+        assertEquals(2, effectedNum);
     }
 
     @Test

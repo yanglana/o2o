@@ -49,8 +49,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setShopName("修改后的店铺名称");
         File shopImg = new File("E:/image/dabai.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ImageHolder thumbnail = new ImageHolder(shopImg.getName(),is);
-        ShopExecution shopExecution = shopService.modifyShop(shop,thumbnail);
+        ImageHolder thumbnail = new ImageHolder(shopImg.getName(), is);
+        ShopExecution shopExecution = shopService.modifyShop(shop, thumbnail);
         System.out.println("新的图片地址为：" + shopExecution.getShop().getShopImg());
     }
 
@@ -76,7 +76,7 @@ public class ShopServiceTest extends BaseTest {
         shop.setAdvice("审核中");
         File shopImage = new File("E:/image/xiaohuangren.jpg");
         InputStream is = new FileInputStream(shopImage);
-        ImageHolder thumbnail = new ImageHolder(shopImage.getName(),is);
+        ImageHolder thumbnail = new ImageHolder(shopImage.getName(), is);
         ShopExecution se = shopService.addShop(shop, thumbnail);
         assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
     }

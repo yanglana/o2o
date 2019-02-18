@@ -23,7 +23,7 @@ public class LocalAuthServiceTest extends BaseTest {
     private LocalAuthService localAuthService;
 
     @Test
-    public void testABindLocalAuth(){
+    public void testABindLocalAuth() {
         // 新增一条平台帐号
         LocalAuth localAuth = new LocalAuth();
         PersonInfo personInfo = new PersonInfo();
@@ -49,15 +49,15 @@ public class LocalAuthServiceTest extends BaseTest {
     }
 
     @Test
-    public void testBModifyLocalAuth(){
+    public void testBModifyLocalAuth() {
         // 设置帐号信息
         long userId = 1;
         String username = "testusername";
         String password = "testpasswordnew";
         String newpassword = "testnewpassword";
         // 修改该帐号对应的密码
-        LocalAuthExecution lae = localAuthService.modifyLocalAuth(userId,username,password,newpassword);
-        assertEquals(LocalAuthStateEnum.SUCCESS.getState(),lae.getState());
+        LocalAuthExecution lae = localAuthService.modifyLocalAuth(userId, username, password, newpassword);
+        assertEquals(LocalAuthStateEnum.SUCCESS.getState(), lae.getState());
         // 通过帐号密码找到修改后的localAuth
         LocalAuth localAuth = localAuthService.getLocalAuthByUsernameAndPwd(username, newpassword);
         // 打印用户名字看看跟预期是否相符

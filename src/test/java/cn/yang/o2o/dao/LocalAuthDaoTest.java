@@ -25,7 +25,7 @@ public class LocalAuthDaoTest extends BaseTest {
     private static final String password = "testpassword";
 
     @Test
-    public void testAInsertLocalAuth(){
+    public void testAInsertLocalAuth() {
         // 新增一条平台帐号信息
         LocalAuth localAuth = new LocalAuth();
         PersonInfo personInfo = new PersonInfo();
@@ -36,30 +36,30 @@ public class LocalAuthDaoTest extends BaseTest {
         localAuth.setUsername(username);
         localAuth.setPassword(password);
         localAuth.setCreateTime(new Date());
-        int effectedNum= localAuthDao.insertLocalAuth(localAuth);
-        assertEquals(1,effectedNum);
+        int effectedNum = localAuthDao.insertLocalAuth(localAuth);
+        assertEquals(1, effectedNum);
     }
 
     @Test
-    public void testBQueryByUserNameAndPwd(){
+    public void testBQueryByUserNameAndPwd() {
         // 按照帐号和密码查询用户信息
-        LocalAuth localAuth = localAuthDao.queryLocalByUserNameAndPwd(username,password);
+        LocalAuth localAuth = localAuthDao.queryLocalByUserNameAndPwd(username, password);
         assertEquals("测试", localAuth.getPersonInfo().getName());
     }
 
     @Test
-    public void testCQueryLocalByUserId(){
+    public void testCQueryLocalByUserId() {
         // 按照用户Id查询平台帐号，进而获取用户信息
         LocalAuth localAuth = localAuthDao.queryLocalByUserId(1L);
         assertEquals("测试", localAuth.getPersonInfo().getName());
     }
 
     @Test
-    public void testDUpdateLocalAuth(){
+    public void testDUpdateLocalAuth() {
         // 依据用户Id,平台帐号，以及旧密码修改平台帐号密码
         Date now = new Date();
-        int effectedNum = localAuthDao.updateLocalAuth(1L, username, password, password+"new", now);
-        assertEquals(1,effectedNum);
+        int effectedNum = localAuthDao.updateLocalAuth(1L, username, password, password + "new", now);
+        assertEquals(1, effectedNum);
         // 查询出该条平台帐号的最新信息
         LocalAuth localAuth = localAuthDao.queryLocalByUserId(1L);
         // 输出新密码

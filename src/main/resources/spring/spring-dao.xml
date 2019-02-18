@@ -27,7 +27,7 @@
         <property name="jdbcUrl" value="${jdbc.url}"/>
         <property name="user" value="${jdbc.name}"/>
         <property name="password" value="${jdbc.pwd}"/>
-        
+
         <!--c3p0连接池私有属性-->
         <property name="maxPoolSize" value="30"/>
         <property name="minPoolSize" value="10"/>
